@@ -24,4 +24,4 @@ private:
     list<Sloth> sloths;
 };
 
-#endif 
+#endif

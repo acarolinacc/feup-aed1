@@ -15,3 +15,4 @@ void Turma::addSloth(const Sloth& sloth) {
 const list<Sloth>& Turma::getSloths() const {
     return sloths;
 }
+
