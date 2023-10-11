@@ -128,6 +128,30 @@ feup_aed1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\feup_aed1.dir\build.make CMakeFiles/feup_aed1.dir/build
 .PHONY : feup_aed1/fast
 
+src/DataManager.obj: src/DataManager.cpp.obj
+.PHONY : src/DataManager.obj
+
+# target to build an object file
+src/DataManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feup_aed1.dir\build.make CMakeFiles/feup_aed1.dir/src/DataManager.cpp.obj
+.PHONY : src/DataManager.cpp.obj
+
+src/DataManager.i: src/DataManager.cpp.i
+.PHONY : src/DataManager.i
+
+# target to preprocess a source file
+src/DataManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feup_aed1.dir\build.make CMakeFiles/feup_aed1.dir/src/DataManager.cpp.i
+.PHONY : src/DataManager.cpp.i
+
+src/DataManager.s: src/DataManager.cpp.s
+.PHONY : src/DataManager.s
+
+# target to generate assembly for a file
+src/DataManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feup_aed1.dir\build.make CMakeFiles/feup_aed1.dir/src/DataManager.cpp.s
+.PHONY : src/DataManager.cpp.s
+
 src/sloth.obj: src/sloth.cpp.obj
 .PHONY : src/sloth.obj
 
@@ -233,6 +257,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... feup_aed1
+	@echo ... src/DataManager.obj
+	@echo ... src/DataManager.i
+	@echo ... src/DataManager.s
 	@echo ... src/sloth.obj
 	@echo ... src/sloth.i
 	@echo ... src/sloth.s

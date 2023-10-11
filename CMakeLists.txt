@@ -13,4 +13,8 @@ add_executable(feup_aed1
         src/turma.cpp
         src/turma.h
         src/uc.cpp
-        src/uc.h)
+        src/uc.h
+        src/DataManager.h
+        src/DataManager.cpp
+        src/ManageData.cpp
+)
