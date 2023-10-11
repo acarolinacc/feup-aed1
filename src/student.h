@@ -10,7 +10,7 @@
 
 using namespace std;
 
-struct UcClass{
+struct UcClass{ //lets see if its not needed to make a class of it
     string ucCode;
     string tCode;
 };
