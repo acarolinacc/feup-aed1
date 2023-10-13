@@ -43,7 +43,7 @@ void DataManager::readClasses() {
     string line;
     string value;
 
-    vector<Sloth> classes;  // Crie um vetor de objetos Sloth
+    vector<Sloth> classes;  
 
     while (getline(file, line)) {
         istringstream iss(line);
