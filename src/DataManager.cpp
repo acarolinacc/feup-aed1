@@ -60,10 +60,8 @@ void DataManager::readClasses() {
             double duration = stod(values[4]);
             string type = values[5];
 
-            // Crie um objeto Sloth com os dados lidos
             Sloth sloth(ucCode, startHour, startHour + duration, type, weekday);
 
-            // Adicione o objeto Sloth ao vetor classes
             classes.push_back(sloth);
         } else {
             cout << "A linha no arquivo CSV não contém dados suficientes: " << line << endl;
