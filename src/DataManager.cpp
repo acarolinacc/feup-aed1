@@ -43,7 +43,7 @@ void DataManager::readClasses() {
     string line;
     string value;
 
-    vector<Sloth> classes;  
+    vector<Sloth> classes;
 
     while (getline(file, line)) {
         istringstream iss(line);
@@ -63,6 +63,7 @@ void DataManager::readClasses() {
             Sloth sloth(ucCode, startHour, startHour + duration, type, weekday);
 
             classes.push_back(sloth);
+
         } else {
             cout << "A linha no arquivo CSV não contém dados suficientes: " << line << endl;
         }
