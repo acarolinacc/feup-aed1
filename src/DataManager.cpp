@@ -1,11 +1,11 @@
+#include <iostream>
 #include "DataManager.h"
+
 
 
 set<Student> DataManager::getStudents() const{
     return students;
 }
-
-
 
 void DataManager::readStudentClasses(){
     ifstream file("students_classes.csv");
@@ -42,4 +42,57 @@ void DataManager::readStudentClasses(){
     }
     file.close();
 
+}
+
+void DataManager::readClasses() {
+    ifstream file("classes.csv");
+    string line;
+    string value;
+
+    vector<Sloth> classes;
+
+    while (getline(file, line)) {
+        istringstream iss(line);
+        vector<string> values;
+        while (getline(iss, value, ',')) {
+            values.push_back(value);
+        }
+
+        if (values.size() >= 6) {
+            string classCode = values[0];
+            string ucCode = values[1];
+            string weekday = values[2];
+            double startHour = stod(values[3]);
+            double duration = stod(values[4]);
+            string type = values[5];
+
+            Sloth sloth(ucCode, startHour, startHour + duration, type, weekday);
+
+            classes.push_back(sloth);
+
+        } else {
+            cout << "A linha no arquivo CSV não contém dados suficientes: " << line << endl;
+        }
+    }
+    file.close();
+}
+
+void DataManager::readClassesPerUC() {
+    ifstream file("classes_per_uc.csv");
+    string line;
+    string value;
+
+    while (getline(file, line)) {
+        istringstream iss(line);
+        vector<string> values;
+
+        while (getline(iss, value, ',')) {
+            values.push_back(value);
+        }
+
+        if (values.size() == 2) {
+            string ucCode = values[0];
+            string classCode = values[1];
+        }
+    }
 }

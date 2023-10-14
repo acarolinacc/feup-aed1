@@ -18,3 +18,4 @@ add_executable(feup_aed1
         src/DataManager.cpp
         src/main.cpp
 )
+
