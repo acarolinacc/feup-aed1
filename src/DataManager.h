@@ -13,6 +13,7 @@ class DataManager{
 public:
 
     void readStudentClasses();
+    set<Student> getStudents() const ;
 private:
     set<Student>students;
 };

@@ -20,3 +20,28 @@ void Student::addSloth(const Sloth& sloth) {
 const list<Sloth>& Student::getSloths() const {
     return sloths;
 }
+
+void Student::addUcClass(const UcClass& newUcClass){
+    classes.push_back(newUcClass);
+
+}
+bool Student::operator<(const Student &other) const {
+    return this->code<other.code;
+}
+
+void Student::print_student(){
+    cout << name << '/' << code << print_UcClass() << '\n';
+}
+
+string Student::print_UcClass() {
+    string result="[";
+    for (const auto& value : classes) {
+        result+="[";
+        result+=value.tCode;
+        result+=",";
+        result+=value.ucCode;
+        result+="]";
+    }
+    result +="]";
+    return  result;
+}

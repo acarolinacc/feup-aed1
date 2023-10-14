@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/feup_aed1.dir/src/DataManager.cpp.obj"
   "CMakeFiles/feup_aed1.dir/src/DataManager.cpp.obj.d"
+  "CMakeFiles/feup_aed1.dir/src/main.cpp.obj"
+  "CMakeFiles/feup_aed1.dir/src/main.cpp.obj.d"
   "CMakeFiles/feup_aed1.dir/src/sloth.cpp.obj"
   "CMakeFiles/feup_aed1.dir/src/sloth.cpp.obj.d"
   "CMakeFiles/feup_aed1.dir/src/student.cpp.obj"

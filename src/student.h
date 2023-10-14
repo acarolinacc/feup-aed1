@@ -7,6 +7,7 @@
 #include <vector>
 #include "uc.h"
 #include "turma.h"
+#include <iostream>
 
 using namespace std;
 
@@ -31,6 +32,8 @@ public:
     const list<Sloth>& getSloths() const;
     void addUcClass(const UcClass& newUcClass);
     bool operator<(const Student &other) const;
+    void print_student();
+    string print_UcClass();
 private:
     int code;
     string name;

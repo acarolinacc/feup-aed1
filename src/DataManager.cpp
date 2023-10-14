@@ -1,6 +1,11 @@
 #include "DataManager.h"
 
 
+set<Student> DataManager::getStudents() const{
+    return students;
+}
+
+
 
 void DataManager::readStudentClasses(){
     ifstream file("students_classes.csv");
@@ -10,6 +15,7 @@ void DataManager::readStudentClasses(){
 
     vector<string> values;
     string studentName; string studentCode;
+    getline(file,line);//the first line is not important
     while (getline(file,line)){
         istringstream iss(line);
         while (getline(iss,value,',')){    //values[0]-studentiD,value[1]-StudentName,value[2]-ucCode,value[3]-classCode
@@ -34,6 +40,6 @@ void DataManager::readStudentClasses(){
 
 
     }
-
+    file.close();
 
 }

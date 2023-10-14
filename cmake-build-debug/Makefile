@@ -152,6 +152,30 @@ src/DataManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\feup_aed1.dir\build.make CMakeFiles/feup_aed1.dir/src/DataManager.cpp.s
 .PHONY : src/DataManager.cpp.s
 
+src/main.obj: src/main.cpp.obj
+.PHONY : src/main.obj
+
+# target to build an object file
+src/main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feup_aed1.dir\build.make CMakeFiles/feup_aed1.dir/src/main.cpp.obj
+.PHONY : src/main.cpp.obj
+
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feup_aed1.dir\build.make CMakeFiles/feup_aed1.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feup_aed1.dir\build.make CMakeFiles/feup_aed1.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
 src/sloth.obj: src/sloth.cpp.obj
 .PHONY : src/sloth.obj
 
@@ -260,6 +284,9 @@ help:
 	@echo ... src/DataManager.obj
 	@echo ... src/DataManager.i
 	@echo ... src/DataManager.s
+	@echo ... src/main.obj
+	@echo ... src/main.i
+	@echo ... src/main.s
 	@echo ... src/sloth.obj
 	@echo ... src/sloth.i
 	@echo ... src/sloth.s
