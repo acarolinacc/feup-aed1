@@ -128,6 +128,30 @@ feup_aed1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\feup_aed1.dir\build.make CMakeFiles/feup_aed1.dir/build
 .PHONY : feup_aed1/fast
 
+src/ClassUC.obj: src/ClassUC.cpp.obj
+.PHONY : src/ClassUC.obj
+
+# target to build an object file
+src/ClassUC.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feup_aed1.dir\build.make CMakeFiles/feup_aed1.dir/src/ClassUC.cpp.obj
+.PHONY : src/ClassUC.cpp.obj
+
+src/ClassUC.i: src/ClassUC.cpp.i
+.PHONY : src/ClassUC.i
+
+# target to preprocess a source file
+src/ClassUC.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feup_aed1.dir\build.make CMakeFiles/feup_aed1.dir/src/ClassUC.cpp.i
+.PHONY : src/ClassUC.cpp.i
+
+src/ClassUC.s: src/ClassUC.cpp.s
+.PHONY : src/ClassUC.s
+
+# target to generate assembly for a file
+src/ClassUC.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feup_aed1.dir\build.make CMakeFiles/feup_aed1.dir/src/ClassUC.cpp.s
+.PHONY : src/ClassUC.cpp.s
+
 src/DataManager.obj: src/DataManager.cpp.obj
 .PHONY : src/DataManager.obj
 
@@ -176,29 +200,29 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\feup_aed1.dir\build.make CMakeFiles/feup_aed1.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/sloth.obj: src/sloth.cpp.obj
-.PHONY : src/sloth.obj
+src/slot.obj: src/slot.cpp.obj
+.PHONY : src/slot.obj
 
 # target to build an object file
-src/sloth.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\feup_aed1.dir\build.make CMakeFiles/feup_aed1.dir/src/sloth.cpp.obj
-.PHONY : src/sloth.cpp.obj
+src/slot.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feup_aed1.dir\build.make CMakeFiles/feup_aed1.dir/src/slot.cpp.obj
+.PHONY : src/slot.cpp.obj
 
-src/sloth.i: src/sloth.cpp.i
-.PHONY : src/sloth.i
+src/slot.i: src/slot.cpp.i
+.PHONY : src/slot.i
 
 # target to preprocess a source file
-src/sloth.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\feup_aed1.dir\build.make CMakeFiles/feup_aed1.dir/src/sloth.cpp.i
-.PHONY : src/sloth.cpp.i
+src/slot.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feup_aed1.dir\build.make CMakeFiles/feup_aed1.dir/src/slot.cpp.i
+.PHONY : src/slot.cpp.i
 
-src/sloth.s: src/sloth.cpp.s
-.PHONY : src/sloth.s
+src/slot.s: src/slot.cpp.s
+.PHONY : src/slot.s
 
 # target to generate assembly for a file
-src/sloth.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\feup_aed1.dir\build.make CMakeFiles/feup_aed1.dir/src/sloth.cpp.s
-.PHONY : src/sloth.cpp.s
+src/slot.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feup_aed1.dir\build.make CMakeFiles/feup_aed1.dir/src/slot.cpp.s
+.PHONY : src/slot.cpp.s
 
 src/student.obj: src/student.cpp.obj
 .PHONY : src/student.obj
@@ -281,15 +305,18 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... feup_aed1
+	@echo ... src/ClassUC.obj
+	@echo ... src/ClassUC.i
+	@echo ... src/ClassUC.s
 	@echo ... src/DataManager.obj
 	@echo ... src/DataManager.i
 	@echo ... src/DataManager.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
-	@echo ... src/sloth.obj
-	@echo ... src/sloth.i
-	@echo ... src/sloth.s
+	@echo ... src/slot.obj
+	@echo ... src/slot.i
+	@echo ... src/slot.s
 	@echo ... src/student.obj
 	@echo ... src/student.i
 	@echo ... src/student.s

@@ -3,7 +3,7 @@
 
 #include <string>
 #include <list>
-#include "Sloth.h"
+#include "slot.h"
 #include <vector>
 #include "uc.h"
 #include "turma.h"
@@ -25,10 +25,12 @@ public:
 
     string getName() const;
 
-    void addSloth(const Sloth& sloth);
+    void addSloth(const Slot& slot);
 
-    void removeSloth(const Sloth& sloth);
+
     const list<Sloth>& getSloths() const;
+    void removeSloth(const Slot& slot);
+    const list<Slot>& getSloths() const;
     void addUcClass(const UcClass& newUcClass);
     bool operator<(const Student &other) const;
     bool operator==(const Student &other) const;
@@ -39,7 +41,7 @@ public:
 private:
     int code;
     string name;
-    list<Sloth> sloths;
+    list<Slot> sloths;
     vector<UcClass> classes;
 
 

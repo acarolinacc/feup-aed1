@@ -1,6 +1,6 @@
 #include <iostream>
 #include "DataManager.h"
-
+#include "ClassUC.h"
 
 
 set<Student> DataManager::getStudents() const{
@@ -48,37 +48,65 @@ void DataManager::readStudentClasses(){
     file.close();
 }
 
+const vector<ClassUC> &DataManager::getAllUC() const {
+    return allUC_;
+}
+
 void DataManager::readClasses() {
-    ifstream file("classes.csv");
-    string line;
-    string value;
 
-    vector<Sloth> classes;
+    string fname = "classes.csv";
+    ifstream file(fname);
 
-    while (getline(file, line)) {
-        istringstream iss(line);
-        vector<string> values;
-        while (getline(iss, value, ',')) {
-            values.push_back(value);
+    std::string line = "";
+    std::string str = "";
+    std::string previousUC = ""; //compares current uc code with the last one
+    vector<std::string> temp;
+
+
+    if (file.is_open()) {
+        getline(file, line); //skip the first line, since is useless in this context
+        while (getline(file, line)) {
+            temp.clear();
+            istringstream iss(line);
+
+            while (getline(iss, str, ',')) {
+                temp.push_back(str);
+            }
+
+
+            string classCode = temp[0];
+            string ucCode = temp[1];
+            string day = temp[2];
+            string start = temp[3];
+            string duration = temp[4];
+            string type = temp[5];
+            Slot slot (day, start, duration, type);
+
+
+
+            if (ucCode != previousUC) {
+
+                allUC_.push_back(ClassUC(ucCode,classCode,{slot}));
+
+            } else {
+                bool ucAlreadyIn = false;
+                for (ClassUC& uc: allUC_) {
+                    if (classCode == uc.getClassCode() && ucCode == uc.getUcCode()) {
+                        uc.addSlot(slot);
+                        ucAlreadyIn = true;
+                    }
+                }
+                if (!ucAlreadyIn) { allUC_.push_back(ClassUC(ucCode, classCode, {slot})); }
+
+            }
+
+            previousUC=ucCode;
         }
 
-        if (values.size() >= 6) {
-            string classCode = values[0];
-            string ucCode = values[1];
-            string weekday = values[2];
-            double startHour = stod(values[3]);
-            double duration = stod(values[4]);
-            string type = values[5];
-
-            Sloth sloth(ucCode, startHour, startHour + duration, type, weekday);
-
-            classes.push_back(sloth);
-
-        } else {
-            cout << "A linha no arquivo CSV não contém dados suficientes: " << line << endl;
-        }
     }
-    file.close();
+    else {cout << "Didn't manage to open classes.csv." << endl; }
+
+
 }
 
 void DataManager::readClassesPerUC() {

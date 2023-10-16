@@ -8,11 +8,11 @@ int Turma::getCode() const {
     return code;
 }
 
-void Turma::addSloth(const Sloth& sloth) {
-    sloths.push_back(sloth);
+void Turma::addSloth(const Slot& slot) {
+    slots.push_back(slot);
 }
 
-const list<Sloth>& Turma::getSloths() const {
-    return sloths;
+const list<Slot>& Turma::getSlots() const {
+    return slots;
 }
 

@@ -2,7 +2,8 @@
 #define DATAMANAGER_H
 
 #include "student.h"
-#include "sloth.h"
+#include "slot.h"
+#include "ClassUC.h"
 #include <string>
 #include <fstream>
 #include <sstream>
@@ -17,11 +18,13 @@ public:
     void readStudentClasses();
     set<Student> getStudents() const ;
     void readClassesPerUC();
+    const vector<ClassUC> &getAllUC() const;
 
 
 private:
     set<Student>students;
-    vector<Sloth> classes;
+    vector<Slot> classes;
+    vector<ClassUC> allUC_ = {};
 
 };
 

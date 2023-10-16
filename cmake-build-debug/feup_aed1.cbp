@@ -84,6 +84,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Rodrigo Ribeiro/Desktop/projeto aed/feup-aed1/src/ClassUC.cpp">
+			<Option target="feup_aed1"/>
+		</Unit>
+		<Unit filename="C:/Users/Rodrigo Ribeiro/Desktop/projeto aed/feup-aed1/src/ClassUC.h">
+			<Option target="feup_aed1"/>
+		</Unit>
 		<Unit filename="C:/Users/Rodrigo Ribeiro/Desktop/projeto aed/feup-aed1/src/DataManager.cpp">
 			<Option target="feup_aed1"/>
 		</Unit>
@@ -93,10 +99,10 @@
 		<Unit filename="C:/Users/Rodrigo Ribeiro/Desktop/projeto aed/feup-aed1/src/main.cpp">
 			<Option target="feup_aed1"/>
 		</Unit>
-		<Unit filename="C:/Users/Rodrigo Ribeiro/Desktop/projeto aed/feup-aed1/src/sloth.cpp">
+		<Unit filename="C:/Users/Rodrigo Ribeiro/Desktop/projeto aed/feup-aed1/src/slot.cpp">
 			<Option target="feup_aed1"/>
 		</Unit>
-		<Unit filename="C:/Users/Rodrigo Ribeiro/Desktop/projeto aed/feup-aed1/src/sloth.h">
+		<Unit filename="C:/Users/Rodrigo Ribeiro/Desktop/projeto aed/feup-aed1/src/slot.h">
 			<Option target="feup_aed1"/>
 		</Unit>
 		<Unit filename="C:/Users/Rodrigo Ribeiro/Desktop/projeto aed/feup-aed1/src/student.cpp">

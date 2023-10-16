@@ -68,20 +68,20 @@ include CMakeFiles/feup_aed1.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/feup_aed1.dir/flags.make
 
-CMakeFiles/feup_aed1.dir/src/sloth.cpp.obj: CMakeFiles/feup_aed1.dir/flags.make
-CMakeFiles/feup_aed1.dir/src/sloth.cpp.obj: CMakeFiles/feup_aed1.dir/includes_CXX.rsp
-CMakeFiles/feup_aed1.dir/src/sloth.cpp.obj: C:/Users/Rodrigo\ Ribeiro/Desktop/projeto\ aed/feup-aed1/src/sloth.cpp
-CMakeFiles/feup_aed1.dir/src/sloth.cpp.obj: CMakeFiles/feup_aed1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Rodrigo Ribeiro\Desktop\projeto aed\feup-aed1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/feup_aed1.dir/src/sloth.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/feup_aed1.dir/src/sloth.cpp.obj -MF CMakeFiles\feup_aed1.dir\src\sloth.cpp.obj.d -o CMakeFiles\feup_aed1.dir\src\sloth.cpp.obj -c "C:\Users\Rodrigo Ribeiro\Desktop\projeto aed\feup-aed1\src\sloth.cpp"
+CMakeFiles/feup_aed1.dir/src/slot.cpp.obj: CMakeFiles/feup_aed1.dir/flags.make
+CMakeFiles/feup_aed1.dir/src/slot.cpp.obj: CMakeFiles/feup_aed1.dir/includes_CXX.rsp
+CMakeFiles/feup_aed1.dir/src/slot.cpp.obj: C:/Users/Rodrigo\ Ribeiro/Desktop/projeto\ aed/feup-aed1/src/slot.cpp
+CMakeFiles/feup_aed1.dir/src/slot.cpp.obj: CMakeFiles/feup_aed1.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Rodrigo Ribeiro\Desktop\projeto aed\feup-aed1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/feup_aed1.dir/src/slot.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/feup_aed1.dir/src/slot.cpp.obj -MF CMakeFiles\feup_aed1.dir\src\slot.cpp.obj.d -o CMakeFiles\feup_aed1.dir\src\slot.cpp.obj -c "C:\Users\Rodrigo Ribeiro\Desktop\projeto aed\feup-aed1\src\slot.cpp"
 
-CMakeFiles/feup_aed1.dir/src/sloth.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/feup_aed1.dir/src/sloth.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Rodrigo Ribeiro\Desktop\projeto aed\feup-aed1\src\sloth.cpp" > CMakeFiles\feup_aed1.dir\src\sloth.cpp.i
+CMakeFiles/feup_aed1.dir/src/slot.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/feup_aed1.dir/src/slot.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Rodrigo Ribeiro\Desktop\projeto aed\feup-aed1\src\slot.cpp" > CMakeFiles\feup_aed1.dir\src\slot.cpp.i
 
-CMakeFiles/feup_aed1.dir/src/sloth.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/feup_aed1.dir/src/sloth.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Rodrigo Ribeiro\Desktop\projeto aed\feup-aed1\src\sloth.cpp" -o CMakeFiles\feup_aed1.dir\src\sloth.cpp.s
+CMakeFiles/feup_aed1.dir/src/slot.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/feup_aed1.dir/src/slot.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Rodrigo Ribeiro\Desktop\projeto aed\feup-aed1\src\slot.cpp" -o CMakeFiles\feup_aed1.dir\src\slot.cpp.s
 
 CMakeFiles/feup_aed1.dir/src/student.cpp.obj: CMakeFiles/feup_aed1.dir/flags.make
 CMakeFiles/feup_aed1.dir/src/student.cpp.obj: CMakeFiles/feup_aed1.dir/includes_CXX.rsp
@@ -128,11 +128,26 @@ CMakeFiles/feup_aed1.dir/src/uc.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/feup_aed1.dir/src/uc.cpp.s"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Rodrigo Ribeiro\Desktop\projeto aed\feup-aed1\src\uc.cpp" -o CMakeFiles\feup_aed1.dir\src\uc.cpp.s
 
+CMakeFiles/feup_aed1.dir/src/ClassUC.cpp.obj: CMakeFiles/feup_aed1.dir/flags.make
+CMakeFiles/feup_aed1.dir/src/ClassUC.cpp.obj: CMakeFiles/feup_aed1.dir/includes_CXX.rsp
+CMakeFiles/feup_aed1.dir/src/ClassUC.cpp.obj: C:/Users/Rodrigo\ Ribeiro/Desktop/projeto\ aed/feup-aed1/src/ClassUC.cpp
+CMakeFiles/feup_aed1.dir/src/ClassUC.cpp.obj: CMakeFiles/feup_aed1.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Rodrigo Ribeiro\Desktop\projeto aed\feup-aed1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/feup_aed1.dir/src/ClassUC.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/feup_aed1.dir/src/ClassUC.cpp.obj -MF CMakeFiles\feup_aed1.dir\src\ClassUC.cpp.obj.d -o CMakeFiles\feup_aed1.dir\src\ClassUC.cpp.obj -c "C:\Users\Rodrigo Ribeiro\Desktop\projeto aed\feup-aed1\src\ClassUC.cpp"
+
+CMakeFiles/feup_aed1.dir/src/ClassUC.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/feup_aed1.dir/src/ClassUC.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Rodrigo Ribeiro\Desktop\projeto aed\feup-aed1\src\ClassUC.cpp" > CMakeFiles\feup_aed1.dir\src\ClassUC.cpp.i
+
+CMakeFiles/feup_aed1.dir/src/ClassUC.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/feup_aed1.dir/src/ClassUC.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Rodrigo Ribeiro\Desktop\projeto aed\feup-aed1\src\ClassUC.cpp" -o CMakeFiles\feup_aed1.dir\src\ClassUC.cpp.s
+
 CMakeFiles/feup_aed1.dir/src/DataManager.cpp.obj: CMakeFiles/feup_aed1.dir/flags.make
 CMakeFiles/feup_aed1.dir/src/DataManager.cpp.obj: CMakeFiles/feup_aed1.dir/includes_CXX.rsp
 CMakeFiles/feup_aed1.dir/src/DataManager.cpp.obj: C:/Users/Rodrigo\ Ribeiro/Desktop/projeto\ aed/feup-aed1/src/DataManager.cpp
 CMakeFiles/feup_aed1.dir/src/DataManager.cpp.obj: CMakeFiles/feup_aed1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Rodrigo Ribeiro\Desktop\projeto aed\feup-aed1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/feup_aed1.dir/src/DataManager.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Rodrigo Ribeiro\Desktop\projeto aed\feup-aed1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/feup_aed1.dir/src/DataManager.cpp.obj"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/feup_aed1.dir/src/DataManager.cpp.obj -MF CMakeFiles\feup_aed1.dir\src\DataManager.cpp.obj.d -o CMakeFiles\feup_aed1.dir\src\DataManager.cpp.obj -c "C:\Users\Rodrigo Ribeiro\Desktop\projeto aed\feup-aed1\src\DataManager.cpp"
 
 CMakeFiles/feup_aed1.dir/src/DataManager.cpp.i: cmake_force
@@ -147,7 +162,7 @@ CMakeFiles/feup_aed1.dir/src/main.cpp.obj: CMakeFiles/feup_aed1.dir/flags.make
 CMakeFiles/feup_aed1.dir/src/main.cpp.obj: CMakeFiles/feup_aed1.dir/includes_CXX.rsp
 CMakeFiles/feup_aed1.dir/src/main.cpp.obj: C:/Users/Rodrigo\ Ribeiro/Desktop/projeto\ aed/feup-aed1/src/main.cpp
 CMakeFiles/feup_aed1.dir/src/main.cpp.obj: CMakeFiles/feup_aed1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Rodrigo Ribeiro\Desktop\projeto aed\feup-aed1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/feup_aed1.dir/src/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Rodrigo Ribeiro\Desktop\projeto aed\feup-aed1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/feup_aed1.dir/src/main.cpp.obj"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/feup_aed1.dir/src/main.cpp.obj -MF CMakeFiles\feup_aed1.dir\src\main.cpp.obj.d -o CMakeFiles\feup_aed1.dir\src\main.cpp.obj -c "C:\Users\Rodrigo Ribeiro\Desktop\projeto aed\feup-aed1\src\main.cpp"
 
 CMakeFiles/feup_aed1.dir/src/main.cpp.i: cmake_force
@@ -160,27 +175,29 @@ CMakeFiles/feup_aed1.dir/src/main.cpp.s: cmake_force
 
 # Object files for target feup_aed1
 feup_aed1_OBJECTS = \
-"CMakeFiles/feup_aed1.dir/src/sloth.cpp.obj" \
+"CMakeFiles/feup_aed1.dir/src/slot.cpp.obj" \
 "CMakeFiles/feup_aed1.dir/src/student.cpp.obj" \
 "CMakeFiles/feup_aed1.dir/src/turma.cpp.obj" \
 "CMakeFiles/feup_aed1.dir/src/uc.cpp.obj" \
+"CMakeFiles/feup_aed1.dir/src/ClassUC.cpp.obj" \
 "CMakeFiles/feup_aed1.dir/src/DataManager.cpp.obj" \
 "CMakeFiles/feup_aed1.dir/src/main.cpp.obj"
 
 # External object files for target feup_aed1
 feup_aed1_EXTERNAL_OBJECTS =
 
-feup_aed1.exe: CMakeFiles/feup_aed1.dir/src/sloth.cpp.obj
+feup_aed1.exe: CMakeFiles/feup_aed1.dir/src/slot.cpp.obj
 feup_aed1.exe: CMakeFiles/feup_aed1.dir/src/student.cpp.obj
 feup_aed1.exe: CMakeFiles/feup_aed1.dir/src/turma.cpp.obj
 feup_aed1.exe: CMakeFiles/feup_aed1.dir/src/uc.cpp.obj
+feup_aed1.exe: CMakeFiles/feup_aed1.dir/src/ClassUC.cpp.obj
 feup_aed1.exe: CMakeFiles/feup_aed1.dir/src/DataManager.cpp.obj
 feup_aed1.exe: CMakeFiles/feup_aed1.dir/src/main.cpp.obj
 feup_aed1.exe: CMakeFiles/feup_aed1.dir/build.make
 feup_aed1.exe: CMakeFiles/feup_aed1.dir/linkLibs.rsp
 feup_aed1.exe: CMakeFiles/feup_aed1.dir/objects1.rsp
 feup_aed1.exe: CMakeFiles/feup_aed1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\Rodrigo Ribeiro\Desktop\projeto aed\feup-aed1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable feup_aed1.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\Rodrigo Ribeiro\Desktop\projeto aed\feup-aed1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable feup_aed1.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\feup_aed1.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

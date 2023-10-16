@@ -3,7 +3,7 @@
 
 #include <string>
 #include <list>
-#include "Sloth.h"
+#include "slot.h"
 
 using namespace std;
 
@@ -13,15 +13,15 @@ public:
     
     int getCode() const;
     
-    void addSloth(const Sloth& sloth);
+    void addSloth(const Slot& slot);
 
-    void removeSloth(const Sloth& sloth);
+    void removeSlot(const Slot& slot);
     
-    const list<Sloth>& getSloths() const;
+    const list<Slot>& getSlots() const;
 
 private:
     int code; 
-    list<Sloth> sloths;
+    list<Slot> slots;
 };
 
 #endif

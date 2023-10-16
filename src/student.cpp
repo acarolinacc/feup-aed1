@@ -12,12 +12,12 @@ string Student::getName() const {
     return name;
 }
 
-void Student::addSloth(const Sloth& sloth) {
-    sloths.push_back(sloth);
+void Student::addSloth(const Slot& slot) {
+    sloths.push_back(slot);
 }
 
 
-const list<Sloth>& Student::getSloths() const {
+const list<Slot>& Student::getSloths() const {
     return sloths;
 }
 
