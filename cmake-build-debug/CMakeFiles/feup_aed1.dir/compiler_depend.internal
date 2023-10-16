@@ -391,13 +391,14 @@ CMakeFiles/feup_aed1.dir/src/main.cpp.obj
  C:/Program Files/JetBrains/CLion 2022.2.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_vector.h
  C:/Program Files/JetBrains/CLion 2022.2.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_bvector.h
  C:/Program Files/JetBrains/CLion 2022.2.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/vector.tcc
- C:/Users/acaro/aed/feup-aed1/src/turma.h
+ C:/Users/acaro/aed/feup-aed1/src/DataManager.h
+ C:/Users/acaro/aed/feup-aed1/src/student.h
  C:/Program Files/JetBrains/CLion 2022.2.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/list
  C:/Program Files/JetBrains/CLion 2022.2.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_list.h
  C:/Program Files/JetBrains/CLion 2022.2.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/allocated_ptr.h
  C:/Program Files/JetBrains/CLion 2022.2.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ext/aligned_buffer.h
  C:/Program Files/JetBrains/CLion 2022.2.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/list.tcc
- C:/Users/acaro/aed/feup-aed1/src/student.h
+ C:/Users/acaro/aed/feup-aed1/src/turma.h
  C:/Program Files/JetBrains/CLion 2022.2.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iostream
  C:/Program Files/JetBrains/CLion 2022.2.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ostream
  C:/Program Files/JetBrains/CLion 2022.2.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ios
@@ -426,7 +427,6 @@ CMakeFiles/feup_aed1.dir/src/main.cpp.obj
  C:/Program Files/JetBrains/CLion 2022.2.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ostream.tcc
  C:/Program Files/JetBrains/CLion 2022.2.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/istream
  C:/Program Files/JetBrains/CLion 2022.2.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/istream.tcc
- C:/Users/acaro/aed/feup-aed1/src/DataManager.h
  C:/Users/acaro/aed/feup-aed1/src/ClassUC.h
  C:/Program Files/JetBrains/CLion 2022.2.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/fstream
  C:/Program Files/JetBrains/CLion 2022.2.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/codecvt.h
