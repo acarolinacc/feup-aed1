@@ -9,11 +9,16 @@
 int main() {
     DataManager teste;
     teste.readStudentClasses();
-    std::set<Student> students = teste.getStudents();
-    for (Student student : students) {
+    const set<Student> students = teste.getStudents(); // Make sure it's const
 
-        student.print_student();
+    for (auto it = students.begin(); it != students.end(); ++it) {
+        it->print();
     }
+
 
     return 0;
 }
+
+
+
+

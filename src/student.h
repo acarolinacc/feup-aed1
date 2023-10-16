@@ -28,17 +28,21 @@ public:
     void addSloth(const Sloth& sloth);
 
     void removeSloth(const Sloth& sloth);
-
     const list<Sloth>& getSloths() const;
     void addUcClass(const UcClass& newUcClass);
     bool operator<(const Student &other) const;
-    void print_student();
-    string print_UcClass();
+    bool operator==(const Student &other) const;
+    void print_student()const;
+
+    void print_UcClass()const;
+    void print()const;
 private:
     int code;
     string name;
     list<Sloth> sloths;
     vector<UcClass> classes;
+
+
 };
 
 #endif

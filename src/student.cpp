@@ -28,20 +28,22 @@ void Student::addUcClass(const UcClass& newUcClass){
 bool Student::operator<(const Student &other) const {
     return this->code<other.code;
 }
-
-void Student::print_student(){
-    cout << name << '/' << code << print_UcClass() << '\n';
+bool Student::operator==(const Student &other) const{
+    if(this->code==other.getCode() and this->name==other.getName()){return true;}
+    return false;
 }
 
-string Student::print_UcClass() {
-    string result="[";
-    for (const auto& value : classes) {
-        result+="[";
-        result+=value.tCode;
-        result+=",";
-        result+=value.ucCode;
-        result+="]";
-    }
-    result +="]";
-    return  result;
+void Student::print_student() const{
+    cout << name << '/' << code<< '\n';
+}
+
+void Student::print_UcClass() const{
+    for (int i=0;i<classes.size()-1;i++) {
+    cout << classes[i].ucCode << " " << classes[i].tCode << "|";}
+    cout << classes[classes.size()-1].ucCode << " " << classes[classes.size()-1].tCode <<"|";
+}
+void Student::print() const{
+    cout << "Student: "; print_student();
+    cout << "Classes: "; print_UcClass();
+    cout<< '\n';
 }
