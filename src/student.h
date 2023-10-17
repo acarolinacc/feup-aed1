@@ -8,14 +8,8 @@
 #include "uc.h"
 #include "turma.h"
 #include <iostream>
-
+#include "ClassUC.h"
 using namespace std;
-
-struct UcClass{ //lets see if its not needed to make a class of it
-    string ucCode;
-    string tCode;
-};
-
 
 class Student {
 public:
@@ -28,21 +22,21 @@ public:
     void addSloth(const Slot& slot);
 
 
-    const list<Sloth>& getSloths() const;
-    void removeSloth(const Slot& slot);
     const list<Slot>& getSloths() const;
-    void addUcClass(const UcClass& newUcClass);
+    void removeSloth(const Slot& slot);
+    const list<Slot>& getSloth() const;
+    void addClassUC(const ClassUC& newClassUc);
     bool operator<(const Student &other) const;
     bool operator==(const Student &other) const;
     void print_student()const;
-
-    void print_UcClass()const;
+    void print_classes()const;
     void print()const;
 private:
     int code;
     string name;
     list<Slot> sloths;
-    vector<UcClass> classes;
+    vector<ClassUC> classes;
+
 
 
 };

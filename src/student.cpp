@@ -20,11 +20,11 @@ void Student::addSloth(const Slot& slot) {
 const list<Slot>& Student::getSloths() const {
     return sloths;
 }
-
-void Student::addUcClass(const UcClass& newUcClass){
-    classes.push_back(newUcClass);
-
+void Student::addClassUC(const ClassUC& newClassUc){
+    classes.push_back(newClassUc);
 }
+
+
 bool Student::operator<(const Student &other) const {
     return this->code<other.code;
 }
@@ -37,13 +37,13 @@ void Student::print_student() const{
     cout << name << '/' << code<< '\n';
 }
 
-void Student::print_UcClass() const{
+void Student::print_classes() const{
     for (int i=0;i<classes.size()-1;i++) {
-    cout << classes[i].ucCode << " " << classes[i].tCode << "|";}
-    cout << classes[classes.size()-1].ucCode << " " << classes[classes.size()-1].tCode <<"|";
+    cout << classes[i].getUcCode() << " " << classes[i].getClassCode() << "|";}
+    cout << classes[classes.size()-1].getUcCode() << " " << classes[classes.size()-1].getClassCode() <<"|";
 }
 void Student::print() const{
     cout << "Student: "; print_student();
-    cout << "Classes: "; print_UcClass();
+    cout << "Classes: "; print_classes();
     cout<< '\n';
 }

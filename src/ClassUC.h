@@ -8,7 +8,7 @@
 class ClassUC {
 public:
     ClassUC(const std::string &ucCode, const std::string &classCode, const std::vector<Slot> &schedule);
-
+    ClassUC(const std::string &ucCode, const std::string &classCode);
     void addSlot(Slot slot);
 
     const std::string &getClassCode() const;

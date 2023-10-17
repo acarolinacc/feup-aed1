@@ -26,19 +26,18 @@ void DataManager::readStudentClasses(){
         }
         if (values.size() >= 4) {
             //adicionar os valores a um student e depois adicionar os students ao set de the estudantes
-            UcClass ucClassread;
+
             int sCode = stoi(values[0]);
             Student student = Student(sCode, values[1]);
-            ucClassread.ucCode = values[2];
-            ucClassread.tCode = values[3];
+            ClassUC classUcRead=ClassUC(values[2],values[3]);
             auto it = students.find(student);
             if (it != students.end()) {
                 Student alterStudent = *it;
                 students.erase(it);
-                alterStudent.addUcClass(ucClassread);
+                alterStudent.addClassUC(classUcRead);
                 students.insert(alterStudent);}
             else {
-                student.addUcClass(ucClassread);
+                student.addClassUC(classUcRead);
                 students.insert(student);
 
             }

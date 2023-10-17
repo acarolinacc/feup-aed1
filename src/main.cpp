@@ -13,7 +13,7 @@ int main() {
 
     for (auto it = students.begin(); it != students.end(); ++it) {
         it->print();}
-
+/*
     const vector<ClassUC>& allUC = dataManager.getAllUC();
 
     for (const ClassUC& uc : allUC) {
@@ -31,7 +31,7 @@ int main() {
         std::cout << "-------------------------" << std::endl;
 
     }
-
+*/
 
     return 0;
 }
