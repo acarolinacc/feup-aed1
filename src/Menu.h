@@ -7,10 +7,10 @@ class Menu {
 public:
     Menu(DataManager& management);
 
-    void start();  // Esta função inicia o menu principal
+    void start();
 
 private:
-    DataManager& management;  // Referência para o gerenciamento de horários
+    DataManager& management;  
 
     void consultarHorarios();
     void consultarHorarioAluno();

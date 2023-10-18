@@ -21,16 +21,16 @@ void Menu::start() {
                 consultarHorarios();
                 break;
             case 2:
-                // Implemente a opção 2
+                // opção 2
                 break;
             case 3:
-                // Implemente a opção 3
+                // opção 3
                 break;
             case 4:
-                // Implemente a opção 4
+                // opção 4
                 break;
             case 5:
-                std::cout << "Saindo do programa." << std::endl;
+                std::cout << "A sair do programa." << std::endl;
                 break;
             default:
                 std::cout << "Opção inválida. Por favor, escolha uma opção válida (1-5)." << std::endl;
@@ -58,7 +58,7 @@ void Menu::consultarHorarios() {
                 consultarHorarioTurma();
                 break;
             case 3:
-                std::cout << "Voltando ao menu principal." << std::endl;
+                std::cout << "A voltar ao menu principal." << std::endl;
                 break;
             default:
                 std::cout << "Opção inválida. Por favor, escolha uma opção válida (1-3)." << std::endl;
@@ -68,9 +68,9 @@ void Menu::consultarHorarios() {
 }
 
 void Menu::consultarHorarioAluno() {
-    // Implemente a lógica para consultar o horário de um aluno (mesmo código da resposta anterior).
+    // Implementa a lógica para consultar o horário de um aluno
 }
 
 void Menu::consultarHorarioTurma() {
-    // Implemente a lógica para consultar o horário de uma turma (mesmo código da resposta anterior).
+    // Implementa a lógica para consultar o horário de uma turma
 }
