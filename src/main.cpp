@@ -2,13 +2,15 @@
 #include "slot.h"
 #include "DataManager.h"
 #include <iostream>
-
+#include "ClassUC.h"
 
 int main() {
 
     DataManager dataManager;
     dataManager.readClasses();
     dataManager.readStudentClasses();
+
+
     const set<Student> students = dataManager.getStudents();
 
     for (auto it = students.begin(); it != students.end(); ++it) {

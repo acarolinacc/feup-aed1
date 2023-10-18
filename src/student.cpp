@@ -23,6 +23,9 @@ const list<Slot>& Student::getSloths() const {
 void Student::addClassUC(const ClassUC& newClassUc){
     classes.push_back(newClassUc);
 }
+const vector<ClassUC> Student::getclassUC() const{
+    return classes;
+}
 
 
 bool Student::operator<(const Student &other) const {
@@ -40,10 +43,11 @@ void Student::print_student() const{
 void Student::print_classes() const{
     for (int i=0;i<classes.size()-1;i++) {
     cout << classes[i].getUcCode() << " " << classes[i].getClassCode() << "|";}
-    cout << classes[classes.size()-1].getUcCode() << " " << classes[classes.size()-1].getClassCode() <<"|";
+    cout << classes[classes.size()-1].getUcCode() << " " << classes[classes.size()-1].getClassCode() <<"|";;
 }
 void Student::print() const{
     cout << "Student: "; print_student();
     cout << "Classes: "; print_classes();
     cout<< '\n';
 }
+

@@ -126,4 +126,19 @@ void DataManager::readClassesPerUC() {
             string classCode = values[1];
         }
     }
+
+
+}
+vector<Student> DataManager::UCstudents(string ucId) const {//iterar pela classes dos estudantes e por no vetor as classes que tem id
+    vector<Student> studentUC;
+    auto it=students.begin();
+    while(it!=students.end()){
+        int size_class=it->getclassUC().size();
+        for(int i=0;i<size_class;i++){
+            if(it->getclassUC()[i].getUcCode()==ucId){
+                studentUC.push_back(*it); //caso o estudante esteja inscrito nesta uc adiciona o estudante no vector da uc;
+            }
+        }
+    }
+    return studentUC;
 }

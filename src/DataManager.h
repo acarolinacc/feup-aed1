@@ -19,7 +19,7 @@ public:
     set<Student> getStudents() const ;
     void readClassesPerUC();
     const vector<ClassUC> &getAllUC() const;
-
+    vector<Student> UCstudents(string ucId) const ;
 
 private:
     set<Student>students;

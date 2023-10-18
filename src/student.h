@@ -8,6 +8,7 @@
 #include "uc.h"
 #include "turma.h"
 #include <iostream>
+#include <algorithm>
 #include "ClassUC.h"
 using namespace std;
 
@@ -26,6 +27,7 @@ public:
     void removeSloth(const Slot& slot);
     const list<Slot>& getSloth() const;
     void addClassUC(const ClassUC& newClassUc);
+    const vector<ClassUC> getclassUC () const;
     bool operator<(const Student &other) const;
     bool operator==(const Student &other) const;
     void print_student()const;
