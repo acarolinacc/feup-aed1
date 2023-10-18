@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/acaro/aed/feup-aed1/src/ClassUC.cpp" "CMakeFiles/feup_aed1.dir/src/ClassUC.cpp.obj" "gcc" "CMakeFiles/feup_aed1.dir/src/ClassUC.cpp.obj.d"
   "C:/Users/acaro/aed/feup-aed1/src/DataManager.cpp" "CMakeFiles/feup_aed1.dir/src/DataManager.cpp.obj" "gcc" "CMakeFiles/feup_aed1.dir/src/DataManager.cpp.obj.d"
+  "C:/Users/acaro/aed/feup-aed1/src/Menu.cpp" "CMakeFiles/feup_aed1.dir/src/Menu.cpp.obj" "gcc" "CMakeFiles/feup_aed1.dir/src/Menu.cpp.obj.d"
   "C:/Users/acaro/aed/feup-aed1/src/main.cpp" "CMakeFiles/feup_aed1.dir/src/main.cpp.obj" "gcc" "CMakeFiles/feup_aed1.dir/src/main.cpp.obj.d"
   "C:/Users/acaro/aed/feup-aed1/src/slot.cpp" "CMakeFiles/feup_aed1.dir/src/slot.cpp.obj" "gcc" "CMakeFiles/feup_aed1.dir/src/slot.cpp.obj.d"
   "C:/Users/acaro/aed/feup-aed1/src/student.cpp" "CMakeFiles/feup_aed1.dir/src/student.cpp.obj" "gcc" "CMakeFiles/feup_aed1.dir/src/student.cpp.obj.d"

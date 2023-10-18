@@ -96,6 +96,12 @@
 		<Unit filename="C:/Users/acaro/aed/feup-aed1/src/DataManager.h">
 			<Option target="feup_aed1"/>
 		</Unit>
+		<Unit filename="C:/Users/acaro/aed/feup-aed1/src/Menu.cpp">
+			<Option target="feup_aed1"/>
+		</Unit>
+		<Unit filename="C:/Users/acaro/aed/feup-aed1/src/Menu.h">
+			<Option target="feup_aed1"/>
+		</Unit>
 		<Unit filename="C:/Users/acaro/aed/feup-aed1/src/main.cpp">
 			<Option target="feup_aed1"/>
 		</Unit>

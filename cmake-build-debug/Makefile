@@ -176,6 +176,30 @@ src/DataManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\feup_aed1.dir\build.make CMakeFiles/feup_aed1.dir/src/DataManager.cpp.s
 .PHONY : src/DataManager.cpp.s
 
+src/Menu.obj: src/Menu.cpp.obj
+.PHONY : src/Menu.obj
+
+# target to build an object file
+src/Menu.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feup_aed1.dir\build.make CMakeFiles/feup_aed1.dir/src/Menu.cpp.obj
+.PHONY : src/Menu.cpp.obj
+
+src/Menu.i: src/Menu.cpp.i
+.PHONY : src/Menu.i
+
+# target to preprocess a source file
+src/Menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feup_aed1.dir\build.make CMakeFiles/feup_aed1.dir/src/Menu.cpp.i
+.PHONY : src/Menu.cpp.i
+
+src/Menu.s: src/Menu.cpp.s
+.PHONY : src/Menu.s
+
+# target to generate assembly for a file
+src/Menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feup_aed1.dir\build.make CMakeFiles/feup_aed1.dir/src/Menu.cpp.s
+.PHONY : src/Menu.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -311,6 +335,9 @@ help:
 	@echo ... src/DataManager.obj
 	@echo ... src/DataManager.i
 	@echo ... src/DataManager.s
+	@echo ... src/Menu.obj
+	@echo ... src/Menu.i
+	@echo ... src/Menu.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
