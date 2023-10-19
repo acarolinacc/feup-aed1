@@ -15,6 +15,16 @@ private:
     void consultarHorarios();
     void consultarHorarioAluno();
     void consultarHorarioTurma();
+
+    void realizarAlteracoes();
+
+    void consultarInformacoesUCs();
+    void consultarInformacoesAlunos();
+    void consultarNumEstudantesInscritosN_UC();
+    void consultarAlunosTurmaCursoAno();
+    void consultarUcsComMaisEstudantes();
+
+    void consultarTurmaAnoCursoUC();
 };
 
 #endif
