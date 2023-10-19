@@ -5,12 +5,12 @@
 
 class Menu {
 public:
+    void setManagement(const DataManager &management);
     Menu(DataManager& management);
-
     void start();
 
 private:
-    DataManager& management;  
+    DataManager management;
 
     void consultarHorarios();
     void consultarHorarioAluno();
@@ -25,6 +25,8 @@ private:
     void consultarUcsComMaisEstudantes();
 
     void consultarTurmaAnoCursoUC();
+    DataManager& management_;
+
 };
 
 #endif

@@ -1,7 +1,29 @@
 #include "Menu.h"
 #include <iostream>
 
-Menu::Menu(DataManager& management) : management(management) {}
+
+Menu::Menu(DataManager& management) : management_(management) {
+    // Implemente a inicialização, se necessário
+}
+
+
+string to_lower (string str)
+{
+    for(auto& elem : str)
+    {elem = tolower(elem);}
+    return str;
+}
+
+string to_upper (string str)
+{
+    for(auto& elem : str)
+    {elem = toupper(elem);}
+    return str;
+}
+
+void Menu::setManagement(const DataManager &management) {
+    management_ = management;
+}
 
 void Menu::start() {
     int choice;
@@ -72,7 +94,29 @@ void Menu::consultarHorarioAluno() {
 }
 
 void Menu::consultarHorarioTurma() {
-    //  consultar o horário de uma turma
+    string uccode;
+    cout << "--------------------------------------------------\n";
+    cout << "Enter the UcCode:";
+    cin >> uccode;
+    string classcode;
+    cout << "Enter the ClassCode:";
+    cin >> classcode;
+    cout << endl;
+    bool isValid=false;
+
+    for(ClassUC uc : management_.getAllUC()) {
+        if (to_lower(uc.getUcCode()) == to_lower(uccode) &&
+            to_lower(uc.getClassCode()) == to_lower(classcode)) {
+            isValid=true;
+            cout << uc.getUcCode() << " -- " << uc.getClassCode() << endl;
+            for (Slot a: uc.getSchedule()) {
+                cout << '\t' << a.getDay();
+                cout << ' ' << a.getStart();
+                cout << ' ' << a.getDuration();
+                cout << ' ' << a.getType() << '\n';
+            }
+        }
+    } if (!isValid) cout << "That's not a valid input.\n";
 }
 
 
