@@ -4,9 +4,8 @@
 
 int main() {
     DataManager management;
-    // Inicialize o objeto DataManager com os dados necessários.
 
-    Menu menu(management); // Crie uma instância de Menu com o objeto DataManager.
+    Menu menu(management);
     menu.start();
 
     return 0;

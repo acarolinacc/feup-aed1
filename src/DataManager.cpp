@@ -127,3 +127,16 @@ void DataManager::readClassesPerUC() {
         }
     }
 }
+
+
+
+
+void DataManager::addStudent(const Student& student) {
+    students.insert(student);
+}
+
+void DataManager::addClassUC(const ClassUC& classUC) {
+    allUC_.push_back(classUC);
+}
+
+

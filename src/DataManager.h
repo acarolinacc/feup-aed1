@@ -14,17 +14,19 @@ class DataManager{
 
 public:
     //DataManager();
+    set<Student> getStudents() const;
+    const vector<ClassUC>& getAllUC() const;
+    void addStudent(const Student& student);
+    void addClassUC(const ClassUC& classUC);
     void readClasses();
     void readStudentClasses();
-    set<Student> getStudents() const ;
     void readClassesPerUC();
-    const vector<ClassUC> &getAllUC() const;
 
 
 private:
     set<Student>students;
     vector<Slot> classes;
-    vector<ClassUC> allUC_ = {};
+    vector<ClassUC> allUC_ ;
 
 };
 

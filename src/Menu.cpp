@@ -94,21 +94,17 @@ void Menu::consultarHorarioAluno() {
 }
 
 void Menu::consultarHorarioTurma() {
-    string uccode;
+    string classCode;
     cout << "--------------------------------------------------\n";
-    cout << "Enter the UcCode:";
-    cin >> uccode;
-    string classcode;
-    cout << "Enter the ClassCode:";
-    cin >> classcode;
+    cout << "Enter the ClassCode: ";
+    cin >> classCode;
     cout << endl;
-    bool isValid=false;
+    bool isValid = false;
 
-    for(ClassUC uc : management_.getAllUC()) {
-        if (to_lower(uc.getUcCode()) == to_lower(uccode) &&
-            to_lower(uc.getClassCode()) == to_lower(classcode)) {
-            isValid=true;
-            cout << uc.getUcCode() << " -- " << uc.getClassCode() << endl;
+    for (ClassUC uc: management_.getAllUC()) {
+        if (to_lower(classCode) == to_lower(uc.getClassCode())) {
+            isValid = true;
+            cout << uc.getUcCode() << endl;
             for (Slot a: uc.getSchedule()) {
                 cout << '\t' << a.getDay();
                 cout << ' ' << a.getStart();
@@ -116,8 +112,13 @@ void Menu::consultarHorarioTurma() {
                 cout << ' ' << a.getType() << '\n';
             }
         }
-    } if (!isValid) cout << "That's not a valid input.\n";
+    }
+
+    if (!isValid) {
+        cout << "That's not a valid input." << endl;
+    }
 }
+
 
 
 void Menu::consultarInformacoesAlunos() {
