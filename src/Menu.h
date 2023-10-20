@@ -27,6 +27,9 @@ private:
     void consultarTurmaAnoCursoUC();
     DataManager& management_;
 
+    void consultarAlunosPorTurma();
+
+    void consultarAlunosPorAno();
 };
 
 #endif

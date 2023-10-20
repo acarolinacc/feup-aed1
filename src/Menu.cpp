@@ -126,6 +126,7 @@ void Menu::consultarInformacoesAlunos() {
     cout << "Escolha uma opção:" << endl;
     cout << "1. Consultar alunos por turma, curso ou ano." << endl;
     cout << "2. Consultar número de estudantes inscritos em, pelo menos, n UCs." << endl;
+    cout << "Por favor, escolha uma opção (1-3): ";
 
     int escolha;
     cin >> escolha;
@@ -144,14 +145,51 @@ void Menu::consultarInformacoesAlunos() {
 
 
 void Menu::consultarAlunosTurmaCursoAno() {
-    // consultar alunos por turma, curso ou ano.
-    cout << "Opção: Consultar alunos por turma, curso ou ano" << endl;
+    // Consultar alunos por turma ou ano.
+    cout << "Página de Consulta de Alunos por Turma ou Ano." << endl;
+
+    int opcao;
+    cout << "Escolha uma opção:" << endl;
+    cout << "1. Consultar alunos por turma." << endl;
+    cout << "2. Consultar alunos por ano." << endl;
+    cout << "3. Voltar ao menu principal." << endl;
+
+    cout << "Por favor, escolha uma opção (1-3): ";
+    cin >> opcao;
+
+    switch (opcao) {
+        case 1:
+            consultarAlunosPorTurma();
+            break;
+        case 2:
+            consultarAlunosPorAno();
+            break;
+        case 3:
+            // Voltar ao menu principal.
+            break;
+        default:
+            cout << "Opção inválida." << endl;
+            break;
+    }
+}
+
+void Menu::consultarAlunosPorTurma() {
+    // consultar alunos por turma.
+    cout << "Opção: Consultar alunos por turma." << endl;
 
 }
 
+void Menu::consultarAlunosPorAno() {
+    cout << "Opção: Consultar alunos por ano." << endl;
+
+}
+
+
+
+
 void Menu::consultarNumEstudantesInscritosN_UC() {
     // consultar o número de estudantes inscritos em pelo menos n UCs.
-    cout << "Opção: Consultar o número de estudantes inscritos em pelo menos n UCs" << endl;
+    cout << "Consultar o número de estudantes inscritos em pelo menos n UCs" << endl;
 }
 
 
