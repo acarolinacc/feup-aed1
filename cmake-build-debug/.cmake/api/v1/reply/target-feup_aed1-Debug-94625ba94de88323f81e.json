@@ -45,14 +45,17 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -std=gnu++14 -fdiagnostics-color=always"
+					"fragment" : "-g"
+				},
+				{
+					"fragment" : "-std=gnu++14"
 				}
 			],
 			"includes" : 
 			[
 				{
 					"backtrace" : 2,
-					"path" : "C:/Users/Rodrigo/Desktop/program/aed/feup-aed1/src"
+					"path" : "C:/Users/acaro/aed/feup-aed1/src"
 				}
 			],
 			"language" : "CXX",

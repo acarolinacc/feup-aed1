@@ -1,4 +1,7 @@
 #include "Menu.h"
+#include "DataManager.h"
+
+
 #include <iostream>
 
 
@@ -174,10 +177,12 @@ void Menu::consultarAlunosTurmaCursoAno() {
 }
 
 void Menu::consultarAlunosPorTurma() {
-    // consultar alunos por turma.
-    cout << "Opção: Consultar alunos por turma." << endl;
 
 }
+
+
+
+
 
 void Menu::consultarAlunosPorAno() {
     cout << "Opção: Consultar alunos por ano." << endl;
