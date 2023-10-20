@@ -31,6 +31,7 @@ public:
     void print_student()const;
     void print_classes()const;
     void print()const;
+    vector<ClassUC> getclassUC()const ;
 private:
     int code;
     string name;

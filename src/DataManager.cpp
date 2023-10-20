@@ -140,3 +140,38 @@ void DataManager::addClassUC(const ClassUC& classUC) {
 }
 
 
+vector<Student> DataManager::UCstudents(string ucId) const {//iterar pela classes dos estudantes e por no vetor as classes que tem id
+    vector<Student> studentUC;
+    auto it=students.begin();
+    while(it!=students.end()){
+        int size_class=it->getclassUC().size();
+        for(int i=0;i<size_class;i++){
+            if(it->getclassUC()[i].getUcCode()==ucId){
+                studentUC.push_back(*it); //caso o estudante esteja inscrito nesta uc adiciona o estudante no vector da uc;
+            }
+        }
+        it++;
+    }
+    return studentUC;
+}
+bool DataManager::sorter(const ClassUC& a, const ClassUC& b){
+    char yearA=a.getClassCode()[0];
+    char yearB=b.getClassCode()[0];
+    string Acode=a.getUcCode();
+    string Bcode=b.getUcCode();
+    if(yearA!=yearB){
+        return yearA<yearB;
+    }
+    if(a.getUcCode()!=b.getUcCode()){
+        return a.getUcCode()<b.getUcCode();
+    }
+    return (UCstudents(Acode).size()< UCstudents(Bcode).size());
+//depois ver e dar commit
+}
+
+vector<ClassUC> DataManager::sortAllU(){
+    vector<ClassUC> sortedAlluc=allUC_;
+    DataManager dataManager;
+    sort(sortedAlluc.begin(), sortedAlluc.end(), [&dataManager](const ClassUC& a, const ClassUC& b) {return dataManager.sorter(a, b);});//I used the lamda funtion to call the sorter which is a method of class Datamanager;
+    return  sortedAlluc;
+}

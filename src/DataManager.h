@@ -8,6 +8,7 @@
 #include <fstream>
 #include <sstream>
 #include <set>
+#include <algorithm>
 
 class DataManager{
 
@@ -21,6 +22,11 @@ public:
     void readClasses();
     void readStudentClasses();
     void readClassesPerUC();
+    vector<Student> UCstudents(string ucId) const ;
+    vector<ClassUC> sortAllU();
+    bool sorter(const ClassUC& a, const ClassUC& b);
+
+
 
 
 private:
