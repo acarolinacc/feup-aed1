@@ -47,3 +47,6 @@ void Student::print() const{
     cout << "Classes: "; print_classes();
     cout<< '\n';
 }
+vector<ClassUC> Student::getclassUC() const{
+    return classes;
+}

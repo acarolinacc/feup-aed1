@@ -1,22 +1,17 @@
-#include "uc.h"
-#include "slot.h"
-#include "DataManager.h"
 #include <iostream>
-
+#include "Menu.h"
+#include "DataManager.h"
 
 int main() {
+    DataManager management;
+    management.readClasses();
+    management.readClassesPerUC();
+    management.readStudentClasses();
+    //Menu menu(management);
+    //menu.start();
+    vector<ClassUC> alluc=management.sortAllU();
 
-    DataManager dataManager;
-    dataManager.readClasses();
-    dataManager.readStudentClasses();
-    const set<Student> students = dataManager.getStudents();
-
-    for (auto it = students.begin(); it != students.end(); ++it) {
-        it->print();}
-/*
-    const vector<ClassUC>& allUC = dataManager.getAllUC();
-
-    for (const ClassUC& uc : allUC) {
+    for (const ClassUC& uc : alluc) {
         std::cout << "UC Code: " << uc.getUcCode() << std::endl;
         std::cout << "Class Code: " << uc.getClassCode() << std::endl;
 
@@ -31,7 +26,5 @@ int main() {
         std::cout << "-------------------------" << std::endl;
 
     }
-*/
-
     return 0;
 }
