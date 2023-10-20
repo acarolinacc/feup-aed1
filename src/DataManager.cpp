@@ -140,7 +140,7 @@ void DataManager::addClassUC(const ClassUC& classUC) {
 }
 
 
-vector<Student> DataManager::UCstudents(string ucId) const {//iterar pela classes dos estudantes e por no vetor as classes que tem id
+vector<Student> DataManager::UCstudents(const string& ucId) const {//iterar pela classes dos estudantes e por no vetor as classes que tem id
     vector<Student> studentUC;
     auto it=students.begin();
     while(it!=students.end()){
@@ -154,6 +154,66 @@ vector<Student> DataManager::UCstudents(string ucId) const {//iterar pela classe
     }
     return studentUC;
 }
+
+vector<ClassUC> DataManager::classOfUc(const string& ucId)const{//iterate throw allUc and get only the ucClasses with ucID;
+    vector<ClassUC> uc_classes;
+    for (const auto& classUc:allUC_){
+        if(classUc.getUcCode()==ucId) {
+            uc_classes.push_back(classUc);
+        }
+    }
+    return uc_classes;
+}
+
+int DataManager::numberStudentsUc(const string& ucId)const{
+    vector<Student> studentUC= UCstudents(ucId);
+    return  studentUC.size();
+}
+bool DataManager::sorterOccupation(const ClassUC& a, const ClassUC& b) const{
+    const string& Acode=a.getUcCode();
+    const string& Bcode=b.getUcCode();
+    return (numberStudentsUc(Acode)> numberStudentsUc(Bcode));
+}
+
+
+vector<ClassUC> DataManager::classuC_x_year(char year)const{
+    vector<ClassUC> uc_classes;
+    for (const auto& classUc:allUC_){
+        string classCode=classUc.getClassCode();
+        char year_read=classCode[0];
+        if(year_read==year) {
+            uc_classes.push_back(classUc);
+        }
+    }
+    return uc_classes;
+}
+
+vector<ClassUC> DataManager::UcWithLessThanXStudents(int x){
+    vector<ClassUC> sorted_alluc=sortAllU();
+    vector<ClassUC> uc_classes;
+    string prev=" ";
+    for (const auto& classUc:allUC_){
+        if(numberStudentsUc(classUc.getUcCode())<x and prev!=classUc.getUcCode() ) {
+            uc_classes.push_back(classUc);
+        }
+        prev=classUc.getUcCode();
+
+    }
+    return uc_classes;
+}
+
+
+
+
+
+
+vector<ClassUC> DataManager::sortAllU_occupation(){
+    vector<ClassUC> sortedAlluc=allUC_;
+    DataManager dataManager;
+    sort(sortedAlluc.begin(), sortedAlluc.end(), [&dataManager](const ClassUC& a, const ClassUC& b) {return dataManager.sorterOccupation(a, b);});
+    return sortedAlluc;
+}
+
 bool DataManager::sorter(const ClassUC& a, const ClassUC& b){
     char yearA=a.getClassCode()[0];
     char yearB=b.getClassCode()[0];
@@ -166,8 +226,8 @@ bool DataManager::sorter(const ClassUC& a, const ClassUC& b){
         return a.getUcCode()<b.getUcCode();
     }
     return (UCstudents(Acode).size()< UCstudents(Bcode).size());
-//depois ver e dar commit
 }
+
 
 vector<ClassUC> DataManager::sortAllU(){
     vector<ClassUC> sortedAlluc=allUC_;
@@ -175,3 +235,7 @@ vector<ClassUC> DataManager::sortAllU(){
     sort(sortedAlluc.begin(), sortedAlluc.end(), [&dataManager](const ClassUC& a, const ClassUC& b) {return dataManager.sorter(a, b);});//I used the lamda funtion to call the sorter which is a method of class Datamanager;
     return  sortedAlluc;
 }
+
+
+
+

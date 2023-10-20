@@ -3,15 +3,16 @@
 #include <string>
 #include "slot.h"
 #include <vector>
+#include <ClassUC.h>
 using  namespace std;
 class Uc{
 public:
-    Uc(string ucId,int ucYear,int ucSemester,vector<Slot> ucSlot);
+    Uc(string ucId);
     int getUcYear() const;
     int getUcSemester() const;
     string getUcId() const;
-    vector<Slot> getUcSlot() const;
-    void addUcSlot(const Slot& slot);
+    vector<ClassUC> getUcclassesOfUc() const;
+    void addUcclassesOfUc(ClassUC classuc);
 
 
 
@@ -20,7 +21,8 @@ private:
     string ucId;
     int ucYear;
     int ucSemester;
-    vector<Slot> ucSlot;
+    vector<ClassUC>classesOfUc;
+
 };
 
 

@@ -246,6 +246,8 @@ CMakeFiles/feup_aed1.dir/src/DataManager.cpp.obj: C:/Users/Rodrigo/Desktop/progr
   D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_bvector.h \
   D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/vector.tcc \
   C:/Users/Rodrigo/Desktop/program/aed/feup-aed1/src/uc.h \
+  C:/Users/Rodrigo/Desktop/program/aed/feup-aed1/src/ClassUC.h \
+  C:/Users/Rodrigo/Desktop/program/aed/feup-aed1/src/slot.h \
   C:/Users/Rodrigo/Desktop/program/aed/feup-aed1/src/turma.h \
   C:/Users/Rodrigo/Desktop/program/aed/feup-aed1/src/ClassUC.h \
   D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/fstream \
@@ -265,7 +267,8 @@ CMakeFiles/feup_aed1.dir/src/DataManager.cpp.obj: C:/Users/Rodrigo/Desktop/progr
   D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/algorithmfwd.h \
   D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_heap.h \
   D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/uniform_int_dist.h \
-  D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_tempbuf.h
+  D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_tempbuf.h \
+  C:/Users/Rodrigo/Desktop/program/aed/feup-aed1/src/uc.h
 
 CMakeFiles/feup_aed1.dir/src/Menu.cpp.obj: C:/Users/Rodrigo/Desktop/program/aed/feup-aed1/src/Menu.cpp \
   C:/Users/Rodrigo/Desktop/program/aed/feup-aed1/src/Menu.h \
@@ -370,6 +373,8 @@ CMakeFiles/feup_aed1.dir/src/Menu.cpp.obj: C:/Users/Rodrigo/Desktop/program/aed/
   D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_bvector.h \
   D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/vector.tcc \
   C:/Users/Rodrigo/Desktop/program/aed/feup-aed1/src/uc.h \
+  C:/Users/Rodrigo/Desktop/program/aed/feup-aed1/src/ClassUC.h \
+  C:/Users/Rodrigo/Desktop/program/aed/feup-aed1/src/slot.h \
   C:/Users/Rodrigo/Desktop/program/aed/feup-aed1/src/turma.h \
   D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
   D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ostream \
@@ -436,7 +441,8 @@ CMakeFiles/feup_aed1.dir/src/Menu.cpp.obj: C:/Users/Rodrigo/Desktop/program/aed/
   D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/algorithmfwd.h \
   D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_heap.h \
   D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/uniform_int_dist.h \
-  D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_tempbuf.h
+  D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_tempbuf.h \
+  C:/Users/Rodrigo/Desktop/program/aed/feup-aed1/src/uc.h
 
 CMakeFiles/feup_aed1.dir/src/main.cpp.obj: C:/Users/Rodrigo/Desktop/program/aed/feup-aed1/src/main.cpp \
   D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
@@ -588,6 +594,8 @@ CMakeFiles/feup_aed1.dir/src/main.cpp.obj: C:/Users/Rodrigo/Desktop/program/aed/
   D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_bvector.h \
   D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/vector.tcc \
   C:/Users/Rodrigo/Desktop/program/aed/feup-aed1/src/uc.h \
+  C:/Users/Rodrigo/Desktop/program/aed/feup-aed1/src/ClassUC.h \
+  C:/Users/Rodrigo/Desktop/program/aed/feup-aed1/src/slot.h \
   C:/Users/Rodrigo/Desktop/program/aed/feup-aed1/src/turma.h \
   C:/Users/Rodrigo/Desktop/program/aed/feup-aed1/src/ClassUC.h \
   D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/fstream \
@@ -607,7 +615,8 @@ CMakeFiles/feup_aed1.dir/src/main.cpp.obj: C:/Users/Rodrigo/Desktop/program/aed/
   D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/algorithmfwd.h \
   D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_heap.h \
   D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/uniform_int_dist.h \
-  D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_tempbuf.h
+  D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_tempbuf.h \
+  C:/Users/Rodrigo/Desktop/program/aed/feup-aed1/src/uc.h
 
 CMakeFiles/feup_aed1.dir/src/slot.cpp.obj: C:/Users/Rodrigo/Desktop/program/aed/feup-aed1/src/slot.cpp \
   C:/Users/Rodrigo/Desktop/program/aed/feup-aed1/src/slot.h \
@@ -800,6 +809,8 @@ CMakeFiles/feup_aed1.dir/src/student.cpp.obj: C:/Users/Rodrigo/Desktop/program/a
   D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_bvector.h \
   D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/vector.tcc \
   C:/Users/Rodrigo/Desktop/program/aed/feup-aed1/src/uc.h \
+  C:/Users/Rodrigo/Desktop/program/aed/feup-aed1/src/ClassUC.h \
+  C:/Users/Rodrigo/Desktop/program/aed/feup-aed1/src/slot.h \
   C:/Users/Rodrigo/Desktop/program/aed/feup-aed1/src/turma.h \
   D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
   D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ostream \
@@ -1040,7 +1051,9 @@ CMakeFiles/feup_aed1.dir/src/uc.cpp.obj: C:/Users/Rodrigo/Desktop/program/aed/fe
   D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_uninitialized.h \
   D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_vector.h \
   D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_bvector.h \
-  D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/vector.tcc
+  D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/vector.tcc \
+  C:/Users/Rodrigo/Desktop/program/aed/feup-aed1/src/ClassUC.h \
+  C:/Users/Rodrigo/Desktop/program/aed/feup-aed1/src/slot.h
 
 
 C:/Users/Rodrigo/Desktop/program/aed/feup-aed1/src/ClassUC.cpp:

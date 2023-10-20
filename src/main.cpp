@@ -9,12 +9,21 @@ int main() {
     management.readStudentClasses();
     //Menu menu(management);
     //menu.start();
-    vector<ClassUC> alluc=management.sortAllU();
+    //vector<Student> stu=management.UCstudents();
 
-    for (const ClassUC& uc : alluc) {
+    /*
+
+    vector<ClassUC> year=management.UcWithLessThanXStudents(100000);
+
+
+
+    for ( ClassUC& uc : year) {
         std::cout << "UC Code: " << uc.getUcCode() << std::endl;
         std::cout << "Class Code: " << uc.getClassCode() << std::endl;
-
+        std::cout << "uc with" << management.numberStudentsUc(uc.getUcCode()) << endl;
+    }
+    if(year.size()==0) {cout<<",";}
+/*
         const std::vector<Slot>& slots = uc.getSchedule();
         for (const Slot& slot : slots) {
             std::cout << "Day: " << slot.getDay() << std::endl;
@@ -26,6 +35,7 @@ int main() {
         std::cout << "-------------------------" << std::endl;
 
     }
+    */
     return 0;
 }
 
