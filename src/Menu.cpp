@@ -6,7 +6,7 @@
 
 
 Menu::Menu(DataManager& management) : management_(management) {
-    // Implemente a inicialização, se necessário
+
 }
 
 
@@ -33,9 +33,9 @@ void Menu::start() {
     do {
         // Menu Principal
         std::cout << "Menu Principal:" << std::endl;
-        std::cout << "1. Consultar horários de alunos ou turmas." << std::endl;
-        std::cout << "2. Consultar informações de alunos." << std::endl;
-        std::cout << "3. Consultar informações de UCs." << std::endl;
+        std::cout << "1. Consultar horários de alunos/turmas/UCs." << std::endl;
+        std::cout << "2. Consultar dados de alunos." << std::endl;
+        std::cout << "3. Consultar dados de UCs." << std::endl;
         std::cout << "4. Realizar alterações em UC ou turmas." << std::endl;
         std::cout << "5. Sair do programa." << std::endl;
         std::cout << "Por favor, escolha uma opção (1-5): ";
@@ -94,22 +94,13 @@ void Menu::consultarHorarios() {
                 std::cout << "A voltar ao menu principal." << std::endl;
                 break;
             default:
-                std::cout << "Opção inválida. Por favor, escolha uma opção válida (1-3)." << std::endl;
+                std::cout << "Opção inválida. Por favor, escolha uma opção válida (1-5)." << std::endl;
                 break;
         }
-    } while (choice != 3);
+    } while (choice != 5);
 }
-//consultar o horário de uma UC
-void Menu::consultarHorarioUC() {
 
-}
-//consultar o horário de uma UC
 
-//consultar o horário de uma UC/Turma
-void Menu::consultarHorarioUCTurma() {
-
-}
-//consultar o horário de uma UC/Turma
 
 
 //consultar o horário de um aluno
@@ -117,6 +108,8 @@ void Menu::consultarHorarioAluno() {
 
 }
 //consultar o horário de um aluno
+
+
 
 
 //consultar o horário de uma turma
@@ -157,9 +150,96 @@ void Menu::displayClassSchedule(const ClassUC& uc) const {
 
 
 
+//consultar o horário de uma UC
+void Menu::consultarHorarioUC() {
+    std::string ucCode;
+
+    std::cout << "--------------------------------------------------\n";
+    std::cout << "Digite o Código da UC: ";
+    std::cin >> ucCode;
+    std::cout << std::endl;
+
+    const std::vector<ClassUC>& todasAsTurmas = management_.getAllUC();
+    bool encontrouUC = false;
+
+    for (const ClassUC& turma : todasAsTurmas) {
+        if (correspondeCodigoUC(turma, ucCode)) {
+            encontrouUC = true;
+            exibirHorarioDaUC(turma);
+        }
+    }
+
+    if (!encontrouUC) {
+        std::cout << "Código de UC inválido." << std::endl;
+    }
+}
+
+bool Menu::correspondeCodigoUC(const ClassUC& turma, const std::string& ucCode) const {
+    return compararIgnorandoMaiusculas(turma.getUcCode(), ucCode);
+}
+
+void Menu::exibirHorarioDaUC(const ClassUC& turma) const {
+    std::cout << turma.getClassCode() << std::endl;
+    for (const Slot& horario : turma.getSchedule()) {
+        std::cout << '\t' << horario.getDay() << ' ' << horario.getStart() << ' ' << horario.getDuration() << ' ' << horario.getType() << '\n';
+    }
+}
+
+bool Menu::compararIgnorandoMaiusculas(const std::string& str1, const std::string& str2) const {
+    // Função para comparar strings ignorando maiúsculas e minúsculas
+    return to_lower(str1) == to_lower(str2);
+}
+
+//consultar o horário de uma UC
+
+
+
+
+//consultar o horário de uma UC/Turma
+void Menu::consultarHorarioUCTurma() {
+    std::string uccode;
+    std::string classcode;
+
+    std::cout << "--------------------------------------------------\n";
+    std::cout << "Digite o Código da UC: ";
+    std::cin >> uccode;
+    std::cout << "Digite o Código da Turma: ";
+    std::cin >> classcode;
+    std::cout << std::endl;
+
+    const std::vector<ClassUC>& todasAsTurmas = management_.getAllUC();
+    bool encontrouTurma = false;
+
+    for (const ClassUC& turma : todasAsTurmas) {
+        if (correspondeCodigoUcETurma(turma, uccode, classcode)) {
+            encontrouTurma = true;
+            exibirHorarioDaTurma(turma);
+        }
+    }
+
+    if (!encontrouTurma) {
+        std::cout << "Código de UC ou Turma inválido." << std::endl;
+    }
+}
+
+bool Menu::correspondeCodigoUcETurma(const ClassUC& turma, const std::string& uccode, const std::string& classcode) const {
+    return (compararIgnorandoMaiusculas(turma.getUcCode(), uccode) && compararIgnorandoMaiusculas(turma.getClassCode(), classcode));
+}
+
+void Menu::exibirHorarioDaTurma(const ClassUC& turma) const {
+    std::cout << turma.getUcCode() << " -- " << turma.getClassCode() << std::endl;
+    for (const Slot& horario : turma.getSchedule()) {
+        std::cout << '\t' << horario.getDay() << ' ' << horario.getStart() << ' ' << horario.getDuration() << ' ' << horario.getType() << '\n';
+    }
+}
+
+//consultar o horário de uma UC/Turma
+
+
+
+
 void Menu::consultarInformacoesAlunos() {
-    cout << "Página de Consulta de Informações de Alunos:" << endl;
-    cout << "Escolha uma opção:" << endl;
+    cout << "Página de Consulta de Dados de Alunos:" << endl;
     cout << "1. Consultar alunos por turma ou ano." << endl;
     cout << "2. Consultar número de estudantes inscritos em, pelo menos, n UCs." << endl;
     cout << "Por favor, escolha uma opção (1-3): ";
@@ -210,9 +290,12 @@ void Menu::consultarAlunosTurmaCursoAno() {
 }
 
 
+
+
+
 //Consultar alunos por UCs e por turmas
 void Menu::consultarAlunosPorTurma() {
-    cout << "Página de Consulta de Alunos por UCs e Turmas:" << endl;
+    cout << "Consulta de Alunos por UCs e Turmas" << endl;
 
     string ucCode;
     cout << "Por favor, insira o código da UC: ";
@@ -253,10 +336,34 @@ bool Menu::studentBelongsToUCAndClass(const Student& student, const string& ucCo
 
 
 
-void Menu::consultarAlunosPorAno() {
-    cout << "Opção: Consultar alunos por ano." << endl;
 
+
+
+//Consultar alunos por Ano
+void Menu::consultarAlunosPorAno() {
+    cout << "Consultar alunos por ano (1-3)." << endl;
+
+    char yearChar;
+    cout << "Por favor, insira o ano (1-3): ";
+    cin >> yearChar;
+    cout << endl;
+
+    if (yearChar >= '1' && yearChar <= '3') {
+        for (const Student& student : management_.getStudents()) {
+            for (const ClassUC& classUC : student.getclassUC()) {
+                if (classUC.getClassCode().front() == yearChar) {
+                    cout << "Nome do aluno: " << student.getName() << endl;
+                    cout << "Número de estudante: " << student.getCode() << endl;
+                    cout << "Código da Turma: " << classUC.getClassCode() << endl;
+                    cout << endl;
+                }
+            }
+        }
+    } else {
+        cout << "Ano inválido. Insira um ano de 1 a 3." << endl;
+    }
 }
+//Consultar alunos por Ano
 
 
 
@@ -269,7 +376,7 @@ void Menu::consultarNumEstudantesInscritosN_UC() {
 
 
 void Menu::consultarInformacoesUCs() {
-    cout << "Página de Consulta de Informações de UCs." << endl;
+    cout << "Página de Consulta de Dados de UCs." << endl;
 
     int opcao;
     cout << "Escolha uma opção:" << endl;

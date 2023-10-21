@@ -41,6 +41,14 @@ private:
     bool isStudentValid(const string &input, const Student &student) const;
 
     void displayStudentSchedule(const Student &student) const;
+
+    bool correspondeCodigoUcETurma(const ClassUC &turma, const string &uccode, const string &classcode) const;
+
+    void exibirHorarioDaTurma(const ClassUC &turma) const;
+    void exibirHorarioDaUC(const ClassUC &turma) const;
+    bool compararIgnorandoMaiusculas(const string &str1, const string &str2) const;
+
+    bool correspondeCodigoUC(const ClassUC &turma, const string &ucCode) const;
 };
 
 #endif
