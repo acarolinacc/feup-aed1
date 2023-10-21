@@ -2,6 +2,7 @@
 
 using namespace std;
 
+
 Student::Student(int code, const string& name) : code(code), name(name) {}
 
 int Student::getCode() const {

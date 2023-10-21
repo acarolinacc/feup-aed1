@@ -11,11 +11,12 @@ public:
 
 private:
     DataManager management;
-
+    void printStudentInfo(const Student& student);
+    bool areStringsEqualIgnoreCase(const std::string& str1, const std::string& str2);
     void consultarHorarios();
     void consultarHorarioAluno();
     void consultarHorarioTurma();
-
+    bool studentBelongsToUCAndClass(const Student& student, const string& ucCode, const string& classCode);
     void realizarAlteracoes();
 
     void consultarInformacoesUCs();
@@ -30,6 +31,14 @@ private:
     void consultarAlunosPorTurma();
 
     void consultarAlunosPorAno();
+
+    bool isClassCodeValid(const string &input, const string &target) const;
+
+    void displayClassSchedule(const ClassUC &uc) const;
+
+    bool isStudentValid(const string &input, const Student &student) const;
+
+    void displayStudentSchedule(const Student &student) const;
 };
 
 #endif

@@ -92,42 +92,57 @@ void Menu::consultarHorarios() {
     } while (choice != 3);
 }
 
+
+
+//consultar o horário de um aluno
 void Menu::consultarHorarioAluno() {
-    //consultar o horário de um aluno
+
 }
+//consultar o horário de um aluno
 
+
+//consultar o horário de uma turma
 void Menu::consultarHorarioTurma() {
-    string classCode;
-    cout << "--------------------------------------------------\n";
-    cout << "Enter the ClassCode: ";
-    cin >> classCode;
-    cout << endl;
-    bool isValid = false;
+    std::string classCode;
+    std::cout << "--------------------------------------------------\n";
+    std::cout << "Por favor, insira o código da turma ";
+    std::cin >> classCode;
+    std::cout << std::endl;
 
-    for (ClassUC uc: management_.getAllUC()) {
-        if (to_lower(classCode) == to_lower(uc.getClassCode())) {
+    bool isValid = false;
+    const std::vector<ClassUC>& allUCs = management_.getAllUC();
+
+    for (const ClassUC& uc : allUCs) {
+        if (isClassCodeValid(classCode, uc.getClassCode())) {
             isValid = true;
-            cout << uc.getUcCode() << endl;
-            for (Slot a: uc.getSchedule()) {
-                cout << '\t' << a.getDay();
-                cout << ' ' << a.getStart();
-                cout << ' ' << a.getDuration();
-                cout << ' ' << a.getType() << '\n';
-            }
+            displayClassSchedule(uc);
         }
     }
 
     if (!isValid) {
-        cout << "That's not a valid input." << endl;
+        std::cout << "That's not a valid input." << std::endl;
     }
 }
+
+bool Menu::isClassCodeValid(const std::string& input, const std::string& target) const {
+    return to_lower(input) == to_lower(target);
+}
+
+void Menu::displayClassSchedule(const ClassUC& uc) const {
+    std::cout << uc.getUcCode() << std::endl;
+
+    for (const Slot& a : uc.getSchedule()) {
+        std::cout << '\t' << a.getDay() << ' ' << a.getStart() << ' ' << a.getDuration() << ' ' << a.getType() << '\n';
+    }
+}
+//consultar o horário de uma turma
 
 
 
 void Menu::consultarInformacoesAlunos() {
     cout << "Página de Consulta de Informações de Alunos:" << endl;
     cout << "Escolha uma opção:" << endl;
-    cout << "1. Consultar alunos por turma, curso ou ano." << endl;
+    cout << "1. Consultar alunos por turma ou ano." << endl;
     cout << "2. Consultar número de estudantes inscritos em, pelo menos, n UCs." << endl;
     cout << "Por favor, escolha uma opção (1-3): ";
 
@@ -153,7 +168,7 @@ void Menu::consultarAlunosTurmaCursoAno() {
 
     int opcao;
     cout << "Escolha uma opção:" << endl;
-    cout << "1. Consultar alunos por turma." << endl;
+    cout << "1. Consultar alunos por UCs e por turmas." << endl;
     cout << "2. Consultar alunos por ano." << endl;
     cout << "3. Voltar ao menu principal." << endl;
 
@@ -177,10 +192,43 @@ void Menu::consultarAlunosTurmaCursoAno() {
 }
 
 void Menu::consultarAlunosPorTurma() {
+    cout << "Página de Consulta de Alunos por UCs e Turmas:" << endl;
 
+    string ucCode;
+    cout << "Por favor, insira o código da UC: ";
+    cin >> ucCode;
+
+    string classCode;
+    cout << "Por favor, insira o código da turma: ";
+    cin >> classCode;
+
+    cout << "Alunos pertencentes à UC " << ucCode << " e à turma " << classCode << ":" << endl;
+
+    bool alunosEncontrados = false;
+
+    for (const Student& student : management_.getStudents()) {
+        if (studentBelongsToUCAndClass(student, ucCode, classCode)) {
+            alunosEncontrados = true;
+            cout << "Nome do aluno: " << student.getName() << endl;
+            cout << "Número de estudante: " << student.getCode() << endl;
+            cout << endl;
+        }
+    }
+
+    if (!alunosEncontrados) {
+        cout << "Nenhum aluno encontrado para a UC e turma especificadas." << endl;
+    }
 }
 
-
+bool Menu::studentBelongsToUCAndClass(const Student& student, const string& ucCode, const string& classCode) {
+    for (const ClassUC& classUC : student.getclassUC()) {
+        if (to_lower(classUC.getUcCode()) == to_lower(ucCode) &&
+            to_lower(classUC.getClassCode()) == to_lower(classCode)) {
+            return true;
+        }
+    }
+    return false;
+}
 
 
 
