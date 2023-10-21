@@ -71,8 +71,10 @@ void Menu::consultarHorarios() {
         std::cout << "Página de Consulta de Horários:" << std::endl;
         std::cout << "1. Consultar horário de aluno." << std::endl;
         std::cout << "2. Consultar horário de turma." << std::endl;
-        std::cout << "3. Voltar ao menu principal." << std::endl;
-        std::cout << "Por favor, escolha uma opção (1-3): ";
+        std::cout << "3. Consultar horário de UC." << std::endl;
+        std::cout << "4. Consultar horário de UC/turma." << std::endl;
+        std::cout << "5. Voltar ao menu principal." << std::endl;
+        std::cout << "Por favor, escolha uma opção (1-5): ";
         std::cin >> choice;
 
         switch (choice) {
@@ -83,6 +85,12 @@ void Menu::consultarHorarios() {
                 consultarHorarioTurma();
                 break;
             case 3:
+                consultarHorarioUC();
+                break;
+            case 4:
+                consultarHorarioUCTurma();
+                break;
+            case 5:
                 std::cout << "A voltar ao menu principal." << std::endl;
                 break;
             default:
@@ -91,7 +99,17 @@ void Menu::consultarHorarios() {
         }
     } while (choice != 3);
 }
+//consultar o horário de uma UC
+void Menu::consultarHorarioUC() {
 
+}
+//consultar o horário de uma UC
+
+//consultar o horário de uma UC/Turma
+void Menu::consultarHorarioUCTurma() {
+
+}
+//consultar o horário de uma UC/Turma
 
 
 //consultar o horário de um aluno
@@ -191,6 +209,8 @@ void Menu::consultarAlunosTurmaCursoAno() {
     }
 }
 
+
+//Consultar alunos por UCs e por turmas
 void Menu::consultarAlunosPorTurma() {
     cout << "Página de Consulta de Alunos por UCs e Turmas:" << endl;
 
@@ -229,6 +249,7 @@ bool Menu::studentBelongsToUCAndClass(const Student& student, const string& ucCo
     }
     return false;
 }
+//Consultar alunos por UCs e por turmas
 
 
 

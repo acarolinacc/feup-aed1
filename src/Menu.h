@@ -16,6 +16,8 @@ private:
     void consultarHorarios();
     void consultarHorarioAluno();
     void consultarHorarioTurma();
+    void consultarHorarioUC();
+    void consultarHorarioUCTurma();
     bool studentBelongsToUCAndClass(const Student& student, const string& ucCode, const string& classCode);
     void realizarAlteracoes();
 
