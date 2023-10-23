@@ -271,8 +271,10 @@ void Menu::consultarInformacoesAlunos() {
         case 1:
             consultarAlunosTurmaCursoAno();
             break;
-        case 2:
-            consultarNumEstudantesInscritosN_UC();
+        case 2: {
+            int n;
+            consultarNumEstudantesInscritosN_UC(n);
+        }
             break;
         default:
             cout << "Escolha uma opção válida." << endl;
@@ -393,9 +395,12 @@ void Menu::consultarAlunosPorAno() {
 
 
 
-void Menu::consultarNumEstudantesInscritosN_UC() {
+void Menu::consultarNumEstudantesInscritosN_UC(int n) {
     // consultar o número de estudantes inscritos em pelo menos n UCs.
     cout << "Consultar o número de estudantes inscritos em pelo menos n UCs" << endl;
+    cin >> n;
+    int x = management_.studentregisterUCs(n);
+    cout << "O numero de estudantes em pelo menos n UC's é: " << x << endl;
 }
 
 

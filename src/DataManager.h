@@ -27,6 +27,7 @@ public:
     vector<ClassUC> classuC_x_year(char year)const;
     vector<ClassUC> UcWithLessThanXStudents(int x);
     int numberStudentsUc(const string& ucId)const;
+    int studentregisterUCs(int n);
 
     bool sorterOccupation(const ClassUC& a, const ClassUC& b) const;
     bool sorter(const ClassUC& a, const ClassUC& b);

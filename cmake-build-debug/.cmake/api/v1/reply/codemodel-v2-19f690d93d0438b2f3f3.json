@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "feup_aed1::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-feup_aed1-Debug-94625ba94de88323f81e.json",
+					"jsonFile" : "target-feup_aed1-Debug-6b577c9d094dd4253e7b.json",
 					"name" : "feup_aed1",
 					"projectIndex" : 0
 				}
@@ -49,12 +49,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/acaro/aed/feup-aed1/cmake-build-debug",
-		"source" : "C:/Users/acaro/aed/feup-aed1"
+		"build" : "C:/Users/User/Desktop/FEUP/2o ano/AED/proj/cmake-build-debug",
+		"source" : "C:/Users/User/Desktop/FEUP/2o ano/AED/proj"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 4
+		"minor" : 5
 	}
 }
