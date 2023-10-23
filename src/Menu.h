@@ -49,6 +49,10 @@ private:
     bool compararIgnorandoMaiusculas(const string &str1, const string &str2) const;
 
     bool correspondeCodigoUC(const ClassUC &turma, const string &ucCode) const;
+
+    bool isNameOrUpValid(const string &input, const string &name, const string &upNumber) const;
+
+    void displayClassHorario(const ClassUC &uc) const;
 };
 
 #endif

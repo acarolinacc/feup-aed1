@@ -10,6 +10,10 @@ Menu::Menu(DataManager& management) : management_(management) {
 }
 
 
+void Menu::setManagement(const DataManager &management) {
+    management_ = management;
+}
+
 string to_lower (string str)
 {
     for(auto& elem : str)
@@ -17,29 +21,26 @@ string to_lower (string str)
     return str;
 }
 
-string to_upper (string str)
-{
-    for(auto& elem : str)
-    {elem = toupper(elem);}
-    return str;
-}
-
-void Menu::setManagement(const DataManager &management) {
-    management_ = management;
-}
 
 void Menu::start() {
+    management_.readStudentClasses();
+    management_.readClasses();
     int choice;
     do {
         // Menu Principal
-        std::cout << "Menu Principal:" << std::endl;
-        std::cout << "1. Consultar horários de alunos/turmas/UCs." << std::endl;
-        std::cout << "2. Consultar dados de alunos." << std::endl;
-        std::cout << "3. Consultar dados de UCs." << std::endl;
-        std::cout << "4. Realizar alterações em UC ou turmas." << std::endl;
-        std::cout << "5. Sair do programa." << std::endl;
-        std::cout << "Por favor, escolha uma opção (1-5): ";
-        std::cin >> choice;
+        cout << "╔═════════════════════════════════╗" << endl;
+        cout << "║          Menu Principal         ║" << endl;
+        cout << "║                                 ║" << endl;
+        cout << "║ 1. Consultar horários           ║" << endl;
+        cout << "║ 2. Consultar dados de alunos    ║" << endl;
+        cout << "║ 3. Consultar dados de UCs       ║" << endl;
+        cout << "║ 4. Realizar alterações em UC    ║" << endl;
+        cout << "║    ou turmas                    ║" << endl;
+        cout << "║ 5. Sair do programa             ║" << endl;
+        cout << "║                                 ║" << endl;
+        cout << "╚═════════════════════════════════╝" << endl;
+        cout << "Por favor, escolha uma opção (1-5): ";
+        cin >> choice;
 
         switch (choice) {
             case 1:
@@ -55,10 +56,10 @@ void Menu::start() {
                 realizarAlteracoes();
                 break;
             case 5:
-                std::cout << "A sair do programa." << std::endl;
+                cout << "A sair do programa." << endl;
                 break;
             default:
-                std::cout << "Opção inválida. Por favor, escolha uma opção válida (1-5)." << std::endl;
+                cout << "Opção inválida. Por favor, escolha uma opção válida (1-5)." << endl;
                 break;
         }
     } while (choice != 5);
@@ -68,14 +69,18 @@ void Menu::consultarHorarios() {
     int choice;
     do {
         // Menu da Página de Consulta de Horários
-        std::cout << "Página de Consulta de Horários:" << std::endl;
-        std::cout << "1. Consultar horário de aluno." << std::endl;
-        std::cout << "2. Consultar horário de turma." << std::endl;
-        std::cout << "3. Consultar horário de UC." << std::endl;
-        std::cout << "4. Consultar horário de UC/turma." << std::endl;
-        std::cout << "5. Voltar ao menu principal." << std::endl;
-        std::cout << "Por favor, escolha uma opção (1-5): ";
-        std::cin >> choice;
+        cout << "╔══════════════════════════════════╗" << endl;
+        cout << "║  Página de Consulta de Horários  ║" << endl;
+        cout << "║                                  ║" << endl;
+        cout << "║ 1. Consultar horário de aluno    ║" << endl;
+        cout << "║ 2. Consultar horário de turma    ║" << endl;
+        cout << "║ 3. Consultar horário de UC       ║" << endl;
+        cout << "║ 4. Consultar horário de UC/turma ║" << endl;
+        cout << "║ 5. Voltar ao menu principal      ║" << endl;
+        cout << "║                                  ║" << endl;
+        cout << "╚══════════════════════════════════╝" << endl;
+        cout << "Por favor, escolha uma opção (1-5): ";
+        cin >> choice;
 
         switch (choice) {
             case 1:
@@ -91,10 +96,10 @@ void Menu::consultarHorarios() {
                 consultarHorarioUCTurma();
                 break;
             case 5:
-                std::cout << "A voltar ao menu principal." << std::endl;
+                cout << "A voltar ao menu principal." << endl;
                 break;
             default:
-                std::cout << "Opção inválida. Por favor, escolha uma opção válida (1-5)." << std::endl;
+                cout << "Opção inválida. Por favor, escolha uma opção válida (1-5)." << endl;
                 break;
         }
     } while (choice != 5);
@@ -107,6 +112,12 @@ void Menu::consultarHorarios() {
 void Menu::consultarHorarioAluno() {
 
 }
+
+
+
+
+
+
 //consultar o horário de um aluno
 
 
@@ -114,14 +125,14 @@ void Menu::consultarHorarioAluno() {
 
 //consultar o horário de uma turma
 void Menu::consultarHorarioTurma() {
-    std::string classCode;
-    std::cout << "--------------------------------------------------\n";
-    std::cout << "Por favor, insira o código da turma ";
-    std::cin >> classCode;
-    std::cout << std::endl;
+    string classCode;
+    cout << "--------------------------------------------------\n";
+    cout << "Por favor, insira o código da turma: ";
+    cin >> classCode;
+    cout << endl;
 
     bool isValid = false;
-    const std::vector<ClassUC>& allUCs = management_.getAllUC();
+    const vector<ClassUC>& allUCs = management_.getAllUC();
 
     for (const ClassUC& uc : allUCs) {
         if (isClassCodeValid(classCode, uc.getClassCode())) {
@@ -131,19 +142,19 @@ void Menu::consultarHorarioTurma() {
     }
 
     if (!isValid) {
-        std::cout << "That's not a valid input." << std::endl;
+        cout << "That's not a valid input." << endl;
     }
 }
 
-bool Menu::isClassCodeValid(const std::string& input, const std::string& target) const {
+bool Menu::isClassCodeValid(const string& input, const string& target) const {
     return to_lower(input) == to_lower(target);
 }
 
 void Menu::displayClassSchedule(const ClassUC& uc) const {
-    std::cout << uc.getUcCode() << std::endl;
+    cout << uc.getUcCode() << endl;
 
     for (const Slot& a : uc.getSchedule()) {
-        std::cout << '\t' << a.getDay() << ' ' << a.getStart() << ' ' << a.getDuration() << ' ' << a.getType() << '\n';
+        cout << '\t' << a.getDay() << ' ' << a.getStart() << ' ' << a.getDuration() << ' ' << a.getType() << '\n';
     }
 }
 //consultar o horário de uma turma
@@ -152,14 +163,14 @@ void Menu::displayClassSchedule(const ClassUC& uc) const {
 
 //consultar o horário de uma UC
 void Menu::consultarHorarioUC() {
-    std::string ucCode;
+    string ucCode;
 
-    std::cout << "--------------------------------------------------\n";
-    std::cout << "Digite o Código da UC: ";
-    std::cin >> ucCode;
-    std::cout << std::endl;
+    cout << "--------------------------------------------------\n";
+    cout << "Digite o Código da UC: ";
+    cin >> ucCode;
+    cout << endl;
 
-    const std::vector<ClassUC>& todasAsTurmas = management_.getAllUC();
+    const vector<ClassUC>& todasAsTurmas = management_.getAllUC();
     bool encontrouUC = false;
 
     for (const ClassUC& turma : todasAsTurmas) {
@@ -170,22 +181,22 @@ void Menu::consultarHorarioUC() {
     }
 
     if (!encontrouUC) {
-        std::cout << "Código de UC inválido." << std::endl;
+        cout << "Código de UC inválido." << endl;
     }
 }
 
-bool Menu::correspondeCodigoUC(const ClassUC& turma, const std::string& ucCode) const {
+bool Menu::correspondeCodigoUC(const ClassUC& turma, const string& ucCode) const {
     return compararIgnorandoMaiusculas(turma.getUcCode(), ucCode);
 }
 
 void Menu::exibirHorarioDaUC(const ClassUC& turma) const {
-    std::cout << turma.getClassCode() << std::endl;
+    cout << turma.getClassCode() << endl;
     for (const Slot& horario : turma.getSchedule()) {
-        std::cout << '\t' << horario.getDay() << ' ' << horario.getStart() << ' ' << horario.getDuration() << ' ' << horario.getType() << '\n';
+        cout << '\t' << horario.getDay() << ' ' << horario.getStart() << ' ' << horario.getDuration() << ' ' << horario.getType() << '\n';
     }
 }
 
-bool Menu::compararIgnorandoMaiusculas(const std::string& str1, const std::string& str2) const {
+bool Menu::compararIgnorandoMaiusculas(const string& str1, const string& str2) const {
     // Função para comparar strings ignorando maiúsculas e minúsculas
     return to_lower(str1) == to_lower(str2);
 }
@@ -197,17 +208,17 @@ bool Menu::compararIgnorandoMaiusculas(const std::string& str1, const std::strin
 
 //consultar o horário de uma UC/Turma
 void Menu::consultarHorarioUCTurma() {
-    std::string uccode;
-    std::string classcode;
+    string uccode;
+    string classcode;
 
-    std::cout << "--------------------------------------------------\n";
-    std::cout << "Digite o Código da UC: ";
-    std::cin >> uccode;
-    std::cout << "Digite o Código da Turma: ";
-    std::cin >> classcode;
-    std::cout << std::endl;
+    cout << "--------------------------------------------------\n";
+    cout << "Digite o Código da UC: ";
+    cin >> uccode;
+    cout << "Digite o Código da Turma: ";
+    cin >> classcode;
+    cout << endl;
 
-    const std::vector<ClassUC>& todasAsTurmas = management_.getAllUC();
+    const vector<ClassUC>& todasAsTurmas = management_.getAllUC();
     bool encontrouTurma = false;
 
     for (const ClassUC& turma : todasAsTurmas) {
@@ -218,18 +229,18 @@ void Menu::consultarHorarioUCTurma() {
     }
 
     if (!encontrouTurma) {
-        std::cout << "Código de UC ou Turma inválido." << std::endl;
+        cout << "Código de UC ou Turma inválido." << endl;
     }
 }
 
-bool Menu::correspondeCodigoUcETurma(const ClassUC& turma, const std::string& uccode, const std::string& classcode) const {
+bool Menu::correspondeCodigoUcETurma(const ClassUC& turma, const string& uccode, const string& classcode) const {
     return (compararIgnorandoMaiusculas(turma.getUcCode(), uccode) && compararIgnorandoMaiusculas(turma.getClassCode(), classcode));
 }
 
 void Menu::exibirHorarioDaTurma(const ClassUC& turma) const {
-    std::cout << turma.getUcCode() << " -- " << turma.getClassCode() << std::endl;
+    cout << turma.getUcCode() << " -- " << turma.getClassCode() << endl;
     for (const Slot& horario : turma.getSchedule()) {
-        std::cout << '\t' << horario.getDay() << ' ' << horario.getStart() << ' ' << horario.getDuration() << ' ' << horario.getType() << '\n';
+        cout << '\t' << horario.getDay() << ' ' << horario.getStart() << ' ' << horario.getDuration() << ' ' << horario.getType() << '\n';
     }
 }
 
@@ -239,9 +250,18 @@ void Menu::exibirHorarioDaTurma(const ClassUC& turma) const {
 
 
 void Menu::consultarInformacoesAlunos() {
-    cout << "Página de Consulta de Dados de Alunos:" << endl;
-    cout << "1. Consultar alunos por turma ou ano." << endl;
-    cout << "2. Consultar número de estudantes inscritos em, pelo menos, n UCs." << endl;
+    cout << "╔═════════════════════════════════╗" << endl;
+    cout << "║  Página de Consulta de Dados    ║" << endl;
+    cout << "║           de Alunos             ║" << endl;
+    cout << "║                                 ║" << endl;
+    cout << "║ 1. Consultar alunos por turma   ║" << endl;
+    cout << "║    ou ano                       ║" << endl;
+    cout << "║ 2. Consultar número de          ║" << endl;
+    cout << "║    estudantes inscritos em,     ║" << endl;
+    cout << "║    pelo menos, n UCs            ║" << endl;
+    cout << "║ 3. Voltar ao menu principal     ║" << endl;
+    cout << "║                                 ║" << endl;
+    cout << "╚═════════════════════════════════╝" << endl;
     cout << "Por favor, escolha uma opção (1-3): ";
 
     int escolha;
@@ -262,13 +282,18 @@ void Menu::consultarInformacoesAlunos() {
 
 void Menu::consultarAlunosTurmaCursoAno() {
     // Consultar alunos por turma ou ano.
-    cout << "Página de Consulta de Alunos por Turma ou Ano." << endl;
 
     int opcao;
-    cout << "Escolha uma opção:" << endl;
-    cout << "1. Consultar alunos por UCs e por turmas." << endl;
-    cout << "2. Consultar alunos por ano." << endl;
-    cout << "3. Voltar ao menu principal." << endl;
+    cout << "╔════════════════════════════════╗" << endl;
+    cout << "║  Página de Consulta de Alunos  ║" << endl;
+    cout << "║        por Turma ou Ano        ║" << endl;
+    cout << "║                                ║" << endl;
+    cout << "║ 1. Consultar alunos por UCs    ║" << endl;
+    cout << "║    e por turmas                ║" << endl;
+    cout << "║ 2. Consultar alunos por ano    ║" << endl;
+    cout << "║ 3. Voltar ao menu principal    ║" << endl;
+    cout << "║                                ║" << endl;
+    cout << "╚════════════════════════════════╝" << endl;
 
     cout << "Por favor, escolha uma opção (1-3): ";
     cin >> opcao;
@@ -376,13 +401,19 @@ void Menu::consultarNumEstudantesInscritosN_UC() {
 
 
 void Menu::consultarInformacoesUCs() {
-    cout << "Página de Consulta de Dados de UCs." << endl;
 
     int opcao;
-    cout << "Escolha uma opção:" << endl;
-    cout << "1. Consultar a turma/ano/curso de uma UC." << endl;
-    cout << "2. Consultar as UCs com maior número de estudantes." << endl;
-    cout << "3. Voltar ao menu principal." << endl;
+    cout << "╔═════════════════════════════════╗" << endl;
+    cout << "║  Página de Consulta de Dados    ║" << endl;
+    cout << "║             de UCs              ║" << endl;
+    cout << "║                                 ║" << endl;
+    cout << "║ 1. Consultar a turma/ano/curso  ║" << endl;
+    cout << "║    de uma UC                    ║" << endl;
+    cout << "║ 2. Consultar as UCs com maior   ║" << endl;
+    cout << "║    número de estudantes         ║" << endl;
+    cout << "║ 3. Voltar ao menu principal     ║" << endl;
+    cout << "║                                 ║" << endl;
+    cout << "╚═════════════════════════════════╝" << endl;
 
     cout << "Por favor, escolha uma opção (1-3): ";
     cin >> opcao;
@@ -420,10 +451,16 @@ void Menu::realizarAlteracoes() {
     int choice;
     do {
         // Menu da Página de Realização de Alterações
-        cout << "Página de Realização de Alterações:" << endl;
-        cout << "1. Realizar alterações em UC." << endl;
-        cout << "2. Realizar alterações em turmas." << endl;
-        cout << "3. Voltar ao menu principal." << endl;
+        cout << "╔════════════════════════════════╗" << endl;
+        cout << "║  Página de Realização de       ║" << endl;
+        cout << "║  Alterações                    ║" << endl;
+        cout << "║                                ║" << endl;
+        cout << "║ 1. Realizar alterações em UC   ║" << endl;
+        cout << "║ 2. Realizar alterações em      ║" << endl;
+        cout << "║    turmas                      ║" << endl;
+        cout << "║ 3. Voltar ao menu principal    ║" << endl;
+        cout << "║                                ║" << endl;
+        cout << "╚════════════════════════════════╝" << endl;
         cout << "Por favor, escolha uma opção (1-3): ";
         cin >> choice;
 

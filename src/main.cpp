@@ -3,6 +3,7 @@
 #include "DataManager.h"
 
 int main() {
+
     DataManager management;
 
     Menu menu(management);
