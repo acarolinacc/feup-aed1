@@ -8,7 +8,8 @@
 #include <fstream>
 #include <sstream>
 #include <set>
-
+#include <algorithm>
+#include <uc.h>
 class DataManager{
 
 
@@ -21,16 +22,21 @@ public:
     void readClasses();
     void readStudentClasses();
     void readClassesPerUC();
-    vector<Student> UCstudents(string ucId) const ;
-    vector<ClassUC> sortAllU();
+    vector<Student> UCstudents(const string& ucId) const ;
+    vector<ClassUC> classOfUc(const string& ucId)const;
+    vector<ClassUC> classuC_x_year(char year)const;
+    vector<ClassUC> ucWithXStudents(int x);
+    int numberStudentsUc(const string& ucId)const;
+    int studentregisterUCs(int n);
+
+    bool sorterOccupation(const ClassUC& a, const ClassUC& b) const;
     bool sorter(const ClassUC& a, const ClassUC& b);
-
-
+    vector<ClassUC> sortAllU();
+    vector<ClassUC> sortAllU_occupation();
 private:
     set<Student>students;
     vector<Slot> classes;
     vector<ClassUC> allUC_ ;
-
 };
 
 
