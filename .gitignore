@@ -1,0 +1,5 @@
+cmake-build-debug
+
+# Ignorar arquivos gerados pelo Makefile
+*.o
+*.out
