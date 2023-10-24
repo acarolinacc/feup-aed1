@@ -36,6 +36,7 @@ void Menu::start() {
         cout << "║ 1. Consultar horários           ║" << endl;
         cout << "║ 2. Consultar dados de alunos    ║" << endl;
         cout << "║ 3. Consultar dados de UCs       ║" << endl;
+        cout << "║    e turmas                     ║" << endl;
         cout << "║ 4. Realizar alterações em UC    ║" << endl;
         cout << "║    ou turmas                    ║" << endl;
         cout << "║ 5. Sair do programa             ║" << endl;
@@ -399,7 +400,7 @@ void Menu::consultarAlunosPorAno() {
 
 void Menu::consultarNumEstudantesInscritosN_UC(int n) {
     // consultar o número de estudantes inscritos em pelo menos n UCs.
-    cout << "Consultar o número de estudantes inscritos em pelo menos n UCs" << endl;
+    cout << "Digite o número mínimo de UCs: ";
     cin >> n;
     int x = management_.studentregisterUCs(n);
     cout << "O numero de estudantes em pelo menos n UC's é: " << x << endl;
@@ -414,7 +415,7 @@ void Menu::consultarInformacoesUCs() {
     cout << "║  Página de Consulta de Dados    ║" << endl;
     cout << "║             de UCs              ║" << endl;
     cout << "║                                 ║" << endl;
-    cout << "║ 1. Consultar a turma/ano/curso  ║" << endl;
+    cout << "║ 1. Consultar a turma ou ano     ║" << endl;
     cout << "║    de uma UC                    ║" << endl;
     cout << "║ 2. Consultar as UCs com maior   ║" << endl;
     cout << "║    número de estudantes         ║" << endl;
@@ -444,13 +445,19 @@ void Menu::consultarInformacoesUCs() {
 void Menu::consultarTurmaAnoCursoUC() {
 
     int opcao;
-    //  consultar a turma, ano ou curso da UC.
-    cout << "Escolha uma opção:" << endl;
-    cout << "1. Consultar as turmas de uma uc"<< endl;
-    cout << "2. Consultar todas as turmas de um ano" << endl;
-    cout << "3. Consultar a Uc com x ocupaçoes" << endl;
-    cout << "4. Voltar ao menu principal." << endl;
+    cout << "╔═══════════════════════════════════╗" << endl;
+    cout << "║      Consultar UCs e Turmas       ║" << endl;
+    cout << "║                                   ║" << endl;
+    cout << "║ 1. Consultar as Turmas de uma UC  ║" << endl;
+    cout << "║ 2. Consultar todas as Turmas de   ║" << endl;
+    cout << "║    um ano                         ║" << endl;
+    cout << "║ 3. Consultar a UC com X ocupações ║" << endl;
+    cout << "║ 4. Voltar ao menu principal       ║" << endl;
+    cout << "║                                   ║" << endl;
+    cout << "╚═══════════════════════════════════╝" << endl;
+    cout << "Por favor, escolha uma opção (1-4): ";
     cin >> opcao;
+
     switch (opcao) {
         case 1:
             consultarTurmasUC();
@@ -472,38 +479,63 @@ void Menu::consultarTurmaAnoCursoUC() {
 }
 void Menu::consultarTurmasUC() {
     string ucId;
-    cout << "Escolha uma Uc" << endl;
+    cout << "Por favor, insira o código da UC: " << endl;
     cin >> ucId;
     vector<ClassUC> turmasUc = management_.classOfUc(ucId);
     for (ClassUC &uc: turmasUc) {
         //std::cout << "UC Code: " << uc.getUcCode() << std::endl;
-        std::cout << "Class Code: " << uc.getClassCode() << std::endl;
-        std::cout << "Number of students: " << management_.numberStudentsUc(uc.getUcCode()) << endl;
+        std::cout << "Código da Turma: " << uc.getClassCode() << std::endl;
+        std::cout << "Número de estudantes: " << management_.numberStudentsUc(uc.getUcCode()) << endl;
+        cout << "-------------------------" << endl;
     }
 }
 
 void Menu::consultarUcDeUmAno() {
     char ano;
-    cout << "Escolha uma Ano" << endl;
+    cout << "Por favor, insira o ano (1-3):" << endl;
     cin >> ano;
+
+    if (ano < '1' || ano > '3') {
+        cout << "Ano inválido. Insira um ano de 1 a 3." << endl;
+        return;
+    }
+
     vector<ClassUC> turmasUc = management_.classuC_x_year(ano);
+
+    if (turmasUc.empty()) {
+        cout << "Não foram encontradas UCs para o ano " << ano << "." << endl;
+        return;
+    }
+    cout << "UCs do ano " << ano << ":" << endl;
     for (ClassUC &uc: turmasUc) {
-        std::cout << "UC Code: " << uc.getUcCode() << std::endl;
-        std::cout << "Class Code: " << uc.getClassCode() << std::endl;
-        std::cout << "Number of students: " << management_.numberStudentsUc(uc.getUcCode()) << endl;
+        std::cout << "Código da UC: " << uc.getUcCode() << std::endl;
+        std::cout << "Código da Turma: " << uc.getClassCode() << std::endl;
+        std::cout << "Número de estudantes: " << management_.numberStudentsUc(uc.getUcCode()) << endl;
     }
 }
+
 void Menu::consultarUcComXOcupações() {
     int x;
-    cout << "Escolhe o valor de ocupação " << endl;
+    cout << "Por favor, insira o valor de ocupação desejado: ";
     cin >> x;
+
     vector<ClassUC> turmasUc = management_.ucWithXStudents(x);
-    for (ClassUC &uc: turmasUc) {
-        std::cout << "UC Code: " << uc.getUcCode() << std::endl;
-        std::cout << "Class Code: " << uc.getClassCode() << std::endl;
-        std::cout << "Number of students: " << management_.numberStudentsUc(uc.getUcCode()) << endl;
+
+    if (turmasUc.empty()) {
+        cout << "Não foram encontradas UCs com " << x << " ou mais estudantes." << endl;
+        return;
+    }
+
+    cout << "UCs com " << x << " ou mais estudantes:" << endl;
+
+    for (const ClassUC &uc : turmasUc) {
+        cout << "Código da UC: " << uc.getUcCode() << endl;
+        cout << "Código da Turma: " << uc.getClassCode() << endl;
+        cout << "Número de estudantes: " << management_.numberStudentsUc(uc.getUcCode()) << endl;
+        cout << "-------------------------" << endl;
     }
 }
+
 
 
 

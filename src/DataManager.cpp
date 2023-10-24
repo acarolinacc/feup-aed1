@@ -8,7 +8,7 @@ set<Student> DataManager::getStudents() const{
 }
 
 void DataManager::readStudentClasses(){
-    ifstream file("students_classes.csv");
+    ifstream file("../data/students_classes.csv");
     if (!file.is_open()) {
         cout << "erro a abrir fichiro"<< endl;
         return;
@@ -53,7 +53,7 @@ const vector<ClassUC> &DataManager::getAllUC() const {
 
 void DataManager::readClasses() {
 
-    string fname = "classes.csv";
+    string fname = "../data/classes.csv";
     ifstream file(fname);
 
     std::string line = "";
@@ -109,7 +109,7 @@ void DataManager::readClasses() {
 }
 
 void DataManager::readClassesPerUC() {
-    ifstream file("classes_per_uc.csv");
+    ifstream file("../data/classes_per_uc.csv");
     string line;
     string value;
 
