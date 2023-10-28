@@ -1,3 +1,4 @@
+.idea/
 # Ignorar o diretório de build gerado pelo CMake
 cmake-build-debug/
 
