@@ -9,6 +9,7 @@ cmake-build-debug/
 # Ignorar arquivos e diretórios relacionados ao CMake
 CMakeFiles/
 CMakeCache.txt
+Testing/Temporary/
 CMakeScripts/
 CMakeTmp/
 CMakeLists.txt.user
