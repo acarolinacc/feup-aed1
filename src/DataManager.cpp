@@ -193,7 +193,7 @@ vector<ClassUC> DataManager::ucWithXStudents(int x){
     vector<ClassUC> uc_classes;
     string prev=" ";
     for (const auto& classUc:allUC_){
-        if(numberStudentsUc(classUc.getUcCode())<x and prev!=classUc.getUcCode() ) {
+        if(numberStudentsUc(classUc.getUcCode())==x and prev!=classUc.getUcCode() ) {
             uc_classes.push_back(classUc);
         }
         prev=classUc.getUcCode();
