@@ -56,6 +56,14 @@ private:
     bool isNameOrUpValid(const string &input, const string &name, const string &upNumber) const;
 
     void displayClassHorario(const ClassUC &uc) const;
+
+    void ingressarEmUC();
+
+    void sairDeUC();
+
+    void realizarAlteracoesUC();
+
+    void realizarAlteracoesTurma();
 };
 
 #endif

@@ -1,5 +1,23 @@
-cmake-build-debug
+# Ignorar o diretório de build gerado pelo CMake
+cmake-build-debug/
 
-# Ignorar arquivos gerados pelo Makefile
+# Ignorar arquivos de compilação e saída gerados por compiladores
 *.o
 *.out
+
+# Ignorar arquivos e diretórios relacionados ao CMake
+CMakeFiles/
+CMakeCache.txt
+CMakeScripts/
+CMakeTmp/
+CMakeLists.txt.user
+CMakeDoxyfile.in
+CMakeUserPresets.json
+
+# Desativar conversão de quebras de linha para arquivos com extensão .txt
+*.txt -text
+
+# Ativar conversão de quebras de linha para arquivos .vcproj e .sln
+*.vcproj text eol=crlf
+*.sln text eol=crlf
+

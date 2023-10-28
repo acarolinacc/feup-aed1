@@ -238,12 +238,15 @@ vector<ClassUC> DataManager::sortAllU(){
 
 
 int DataManager::studentregisterUCs(int n) {
-    int count = 0;
+    int count2 = 0;
     for (auto  student : students) {
-        int size = student.getclassUC().size();
-        if (size >= n){
+        int count = 0;
+        for (auto c : student.getclassUC()){
             count++;
         }
+        if(count >= n){
+            count2++;
+        }
     }
-    return count;
+    return count2;
 }

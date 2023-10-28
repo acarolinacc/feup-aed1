@@ -7,8 +7,6 @@
 
 Menu::Menu(DataManager& management) : management_(management) {
 
-    // Implemente a inicialização, se necessário
-
 }
 
 
@@ -53,7 +51,7 @@ void Menu::start() {
                 consultarInformacoesAlunos();
                 break;
             case 3:
-                consultarInformacoesUCs();
+                consultarTurmaAnoCursoUC();
                 break;
             case 4:
                 realizarAlteracoes();
@@ -400,47 +398,12 @@ void Menu::consultarAlunosPorAno() {
 
 void Menu::consultarNumEstudantesInscritosN_UC(int n) {
     // consultar o número de estudantes inscritos em pelo menos n UCs.
-    cout << "Digite o número mínimo de UCs: ";
+    cout << "Digite o número mínimo de UCs:";
     cin >> n;
     int x = management_.studentregisterUCs(n);
-    cout << "O numero de estudantes em pelo menos n UC's é: " << x << endl;
+    cout << "O numero de estudantes em pelo menos "<< n <<" UC's é: "  << x << endl;
 }
 
-
-
-void Menu::consultarInformacoesUCs() {
-
-    int opcao;
-    cout << "╔═════════════════════════════════╗" << endl;
-    cout << "║  Página de Consulta de Dados    ║" << endl;
-    cout << "║             de UCs              ║" << endl;
-    cout << "║                                 ║" << endl;
-    cout << "║ 1. Consultar a turma ou ano     ║" << endl;
-    cout << "║    de uma UC                    ║" << endl;
-    cout << "║ 2. Consultar as UCs com maior   ║" << endl;
-    cout << "║    número de estudantes         ║" << endl;
-    cout << "║ 3. Voltar ao menu principal     ║" << endl;
-    cout << "║                                 ║" << endl;
-    cout << "╚═════════════════════════════════╝" << endl;
-
-    cout << "Por favor, escolha uma opção (1-3): ";
-    cin >> opcao;
-
-    switch (opcao) {
-        case 1:
-            consultarTurmaAnoCursoUC();
-            break;
-        case 2:
-            consultarUcsComMaisEstudantes();
-            break;
-        case 3:
-            // Volte ao menu principal
-            break;
-        default:
-            cout << "Opção inválida." << endl;
-            break;
-    }
-}
 
 void Menu::consultarTurmaAnoCursoUC() {
 
@@ -449,8 +412,7 @@ void Menu::consultarTurmaAnoCursoUC() {
     cout << "║      Consultar UCs e Turmas       ║" << endl;
     cout << "║                                   ║" << endl;
     cout << "║ 1. Consultar as Turmas de uma UC  ║" << endl;
-    cout << "║ 2. Consultar todas as Turmas de   ║" << endl;
-    cout << "║    um ano                         ║" << endl;
+    cout << "║ 2. Consultar as Turmas de um ano  ║" << endl;
     cout << "║ 3. Consultar a UC com X ocupações ║" << endl;
     cout << "║ 4. Voltar ao menu principal       ║" << endl;
     cout << "║                                   ║" << endl;
@@ -482,13 +444,22 @@ void Menu::consultarTurmasUC() {
     cout << "Por favor, insira o código da UC: " << endl;
     cin >> ucId;
     vector<ClassUC> turmasUc = management_.classOfUc(ucId);
-    for (ClassUC &uc: turmasUc) {
+
+    for (ClassUC &uc : turmasUc) {
         //std::cout << "UC Code: " << uc.getUcCode() << std::endl;
         std::cout << "Código da Turma: " << uc.getClassCode() << std::endl;
-        std::cout << "Número de estudantes: " << management_.numberStudentsUc(uc.getUcCode()) << endl;
         cout << "-------------------------" << endl;
     }
+
+    string ucCode;
+
+    for (ClassUC &uc : turmasUc) {
+        ucCode = uc.getUcCode();
+    }
+
+    std::cout << "Número de estudantes da UC: " << management_.numberStudentsUc(ucCode) << endl;
 }
+
 
 void Menu::consultarUcDeUmAno() {
     char ano;
@@ -510,7 +481,8 @@ void Menu::consultarUcDeUmAno() {
     for (ClassUC &uc: turmasUc) {
         std::cout << "Código da UC: " << uc.getUcCode() << std::endl;
         std::cout << "Código da Turma: " << uc.getClassCode() << std::endl;
-        std::cout << "Número de estudantes: " << management_.numberStudentsUc(uc.getUcCode()) << endl;
+        std::cout << "Número de total de estudantes da UC (" << uc.getUcCode() <<") : " << management_.numberStudentsUc(uc.getUcCode()) << endl;
+        cout << "-------------------------" << endl;
     }
 }
 
@@ -537,26 +509,6 @@ void Menu::consultarUcComXOcupações() {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-void Menu::consultarUcsComMaisEstudantes() {
-    //  consultar as UCs com maior número de estudantes.
-    cout << "Opção: Consultar as UCs com maior número de estudantes" << endl;
-}
-
-
-
-
 void Menu::realizarAlteracoes() {
     int choice;
     do {
@@ -576,10 +528,10 @@ void Menu::realizarAlteracoes() {
 
         switch (choice) {
             case 1:
-                // realizar alterações em UC.
+                realizarAlteracoesUC();
                 break;
             case 2:
-                //  realizar alterações em turmas.
+                realizarAlteracoesTurma();
                 break;
             case 3:
                 cout << "A voltar ao menu principal." << endl;
@@ -589,4 +541,54 @@ void Menu::realizarAlteracoes() {
                 break;
         }
     } while (choice != 3);
+}
+
+void Menu::realizarAlteracoesUC() {
+    int choice;
+    do {
+        // Menu de Alterações nas UCs
+        cout << "╔═══════════════════════════════════╗" << endl;
+        cout << "║  Realizar Alterações nas UCs      ║" << endl;
+        cout << "║                                   ║" << endl;
+        cout << "║ 1. Ingressar numa UC              ║" << endl;
+        cout << "║ 2. Sair de uma UC                 ║" << endl;
+        cout << "║ 3. Voltar ao menu principal       ║" << endl;
+        cout << "║                                   ║" << endl;
+        cout << "╚═══════════════════════════════════╝" << endl;
+        cout << "Por favor, escolha uma opção (1-3): ";
+        cin >> choice;
+
+        switch (choice) {
+            case 1:
+                ingressarEmUC();
+                break;
+            case 2:
+                sairDeUC();
+                break;
+            case 3:
+                cout << "A voltar ao menu principal." << endl;
+                break;
+            default:
+                cout << "Opção inválida. Por favor, escolha uma opção válida (1-3)." << endl;
+                break;
+        }
+    } while (choice != 3);
+}
+
+
+
+void Menu::ingressarEmUC() {
+
+}
+
+
+
+
+void Menu::sairDeUC() {
+
+}
+
+
+void Menu::realizarAlteracoesTurma() {
+
 }
